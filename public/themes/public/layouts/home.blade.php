@@ -11,6 +11,7 @@
         <link href="{{ asset(elixir('css/vendor_public.css')) }}" rel="stylesheet">
 
         {!! Theme::asset()->styles() !!}
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         {!! Theme::asset()->scripts() !!}
     </head>
 

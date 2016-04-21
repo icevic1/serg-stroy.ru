@@ -89,5 +89,6 @@ elixir(function(mix) {
         .copy('vendor/bower_components/ionicons/css/ionicons.min.css', 'public/packages/ionicons/css/ionicons.min.css')
         .copy('vendor/bower_components/ionicons/fonts', 'public/packages/ionicons/fonts')
 
+        .less('app.less')
     	;
 });

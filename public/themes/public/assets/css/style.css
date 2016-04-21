@@ -19,7 +19,9 @@ body.home .head .overlay {
     padding: 0;
 }
 body.home .overlay {
-    background-image: linear-gradient(to right,#207ce5 0,#26a9ff 100%);
+    /*background-image: linear-gradient(to right,#207ce5 0,#26a9ff 100%);*/
+    background: url("/img/main_top_img.png") no-repeat;
+    background-size: 100%;
 }
 body.home .head .navbar.navbar-default {
     background-color: transparent;
@@ -188,8 +190,9 @@ body.home .head .ui-screen img {
     font-size: 11px;
 }
 .navbar.navbar-default .navbar-brand {
-    height: auto;
-    padding: 14px 15px;
+    /*height: auto;*/
+    /*padding: 0;*/
+    /*margin-right: 10px;*/
 }
 @media (min-width: 768px)
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
@@ -235,4 +238,80 @@ a {
 body.home .head .navbar.navbar-default .navbar-links>li>a {
     border: 1px solid #fff;
     color: #fff;
+}
+
+/* My Styles */
+/* face cercuri border-radius: 26px;*/
+.navbar {
+    height: 44px;
+}
+ul.social-buttons {
+    background-color: white;
+    height: 44px;
+}
+ul.social-buttons li{
+    padding: 0;
+}
+ul.social-buttons li a {
+    background-image: url("/img/icons_sprite.png");
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    margin: 0px;
+    padding: 0px;
+}
+ul.social-buttons a.evaluate {
+    background-position: 0 0;
+}
+ul.social-buttons li input.evaluate-input {
+    border: 0 none;
+    font-size: 1.7em;
+    font-weight: normal;
+    height: 44px;
+    padding: 8px 5px 10px 10px;
+    width: 190px;
+    color: #1e76a9;
+}
+ul.social-buttons a.fb {
+    background-position: 0 -48px;
+    margin-right: 1px;
+}
+ul.social-buttons a.ok {
+    background-position: 0 -96px;
+    margin-right: 1px;
+}
+ul.social-buttons a.vk {
+    background-position: 0 -144px;
+    margin-right: 1px;
+}
+ul.social-buttons a.btn-google {
+    background-position: 0 -192px;
+    margin-right: 1px;
+}
+ul.social-buttons a.btn-twitter {
+    background-position: 0 -240px;
+}
+h1.contact-phone {
+    font-size: 35px;
+    margin-top: 5px;
+    color: #063551;
+}
+/* nav-bar navbar-custom-menu */
+.navbar.navbar-default.navbar-custom-menu a.navbar-brand {
+    height: auto;
+    padding: 0;
+    margin-right: 10px;
+}
+.navbar-custom-menu ul.nav {
+    background: rgba(255,255,255,0.5);
+}
+.navbar-custom-menu ul.nav li {
+    height: 140px;
+}
+.navbar-custom-menu ul.nav li a {
+    padding: 0 10px;
+    font-size: 17px;
+    line-height: 140px;
+    color: #063551;
 }

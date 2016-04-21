@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="{{asset('apple-touch-icon.png')}}">
         <link href="{{ asset(elixir('css/vendor_public.css')) }}" rel="stylesheet">
-        
+
         {!! Theme::asset()->styles() !!}
         {!! Theme::asset()->scripts() !!}
     </head>

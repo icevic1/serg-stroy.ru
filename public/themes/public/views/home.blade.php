@@ -18,29 +18,23 @@
             </div>
             <nav class="navbar navbar-default navbar-static-top navbar-custom-menu">
                 <div class="container">
-                    <div class = "navbar-header">
-                        <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#navbar-collapse">
-                            <span class = "sr-only">Toggle navigation</span>
-                            <span class = "icon-bar"></span>
-                            <span class = "icon-bar"></span>
-                            <span class = "icon-bar"></span>
-                        </button>
-
+                    <div class="navbar-header">
                         <a class="navbar-brand" href="{{trans_url('/')}}"><img src="{{asset('img/logo/logo.png')}}" alt="Lavalite" class="img-responsive" /></a>
                     </div>
-
-                    <div class = "collapse navbar-collapse" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="">О компании</a></li>
-                            <li><a href="">Цены</a></li>
-                            <li><a href="">Фотогалерея</a></li>
-                            <li><a href="">Отзывы</a></li>
+                    <div class="menu-wrapper">
+                        <ul class="nav navbar-nav navbar-right nav-login">
+                            <li class="login-btn"><a href="#"><img src="{{asset('img/key-icon.jpg')}}" class="img-responsive" /></a></li>
+                            <li class="collapse-btn"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"><img src="{{asset('img/toggle-menu-icon.jpg')}}" class="img-responsive" /></button></li>
                         </ul>
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="">О компании</a></li>
+                                <li><a href="">Цены</a></li>
+                                <li><a href="">Фотогалерея</a></li>
+                                <li><a href="">Отзывы</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="nav navbar-nav navbar-right nav-login">
-                        <li class="login-btn"><a href="#"></a></li>
-                        <li class="collapse-btn"><a href="#"></a></li>
-                    </ul>
                 </div>
             </nav>
             <div class="container">
