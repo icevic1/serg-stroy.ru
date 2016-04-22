@@ -1,0 +1,519 @@
+@import url("http://fonts.googleapis.com/css?family=Pacifico");
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
+//@media (max-width: 768px /* @screen-sm */)
+/*@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}*/
+
+@screen-xs-max:768px;
+/* ========== GENERAL STYLES ========== */
+
+body {
+  font-size: 13px;
+  color: #222;
+  background-color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+body.home .head {
+  background: 0 0;
+  background-size: cover;
+  overflow: hidden;
+}
+body.home .head .overlay {
+  padding: 0;
+}
+body.home .overlay {
+  /*background-image: linear-gradient(to right,#207ce5 0,#26a9ff 100%);*/
+  background: url("/img/main_top_img.png") no-repeat;
+  background-size: 100%;
+}
+body.home .head .navbar.navbar-default {
+  background-color: transparent;
+  padding-top: 10px;
+}
+.navbar-default .navbar-brand {
+  z-index: 900;
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;
+  line-height: 32px;
+  color: #fff;
+}
+.navbar.navbar-default {
+  border: none;
+  letter-spacing: 1px;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #FFF;
+  font-size: 14px;
+}
+.navbar.navbar-default .login {
+  border: 1px solid #FFF;
+  color: #FFF;
+  border-radius: 26px;
+  padding: 0 1.4em;
+  line-height: 40px;
+  margin-top: 8px;
+}
+.intro-well {
+  text-align: center;
+  padding-top: 70px;
+}
+.intro-well h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 62px;
+  line-height: 62px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  clear: both;
+  display: block;
+}
+.intro-well h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 32px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 35px;
+  clear: both;
+  display: block;
+}
+.intro-well h1 small {
+  color: #FFF;
+}
+body.home .head .ui-screen img {
+  bottom: -100px;
+  /*box-shadow: 0 15px 15px rgba(0,0,0,.4);*/
+  position: relative;
+}
+.btn-primary {
+  background-color: #106FC1;
+}
+.btn {
+  border-radius: 0;
+  border: none;
+  font-weight: normal;
+  line-height: 24px;
+  font-family: 'Open Sans', arial, sans-serif;
+}
+.features {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.cs-media {
+  position: absolute;
+  left: 20% !important;
+  width: 60% !important;
+  top: 50% !important;
+}
+.features-header {
+  margin-bottom: 60px;
+}
+.features {
+  text-align: center;
+}
+.feature i {
+  font-size: 5em;
+  margin-bottom: 15px;
+}
+.feature h6 {
+  font-size: 18px;
+}
+.feature p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.features-header h2 {
+  font-weight: 100;
+  font-size: 35px;
+}
+.footer {
+  padding-bottom: 30px;
+  padding-top: 50px;
+  color: #646464;
+}
+.footer ul.footer-links {
+  font-size: 12px;
+  list-style-type: none;
+  margin: 0;
+  padding: 8px 0 0;
+}
+.footer ul.footer-links li {
+  margin-right: 10px;
+  display: inline;
+  color: #646464;
+}
+.footer ul.footer-links li a {
+  text-decoration: none;
+  color: #646464;
+}
+.footer .logo {
+  text-align: center;
+}
+.footer .social {
+  text-align: right;
+}
+.footer ul.footer-links {
+  font-size: 12px;
+  list-style-type: none;
+  margin: 0;
+  padding: 8px 0 0;
+}
+.footer ul.footer-links li {
+  margin-right: 10px;
+  display: inline;
+  color: #646464;
+}
+.footer ul.footer-links li a {
+  text-decoration: none;
+  color: #646464;
+}
+.footer .copyright {
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid #B6B6B6;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+//#wrap {
+//  min-height: 100%;
+//  height: auto!important;
+//  height: 100%;
+//  margin: 0 auto -146px;
+//  padding: 0 0 146px;
+//}
+//.navbar.navbar-default {
+//  background-color: #fff;
+//  border: none;
+//  letter-spacing: 1px;
+//  text-transform: uppercase;
+//  font-size: 11px;
+//}
+//.navbar.navbar-default .navbar-brand {
+//  /*height: auto;*/
+//  /*padding: 0;*/
+//  /*margin-right: 10px;*/
+//}
+//@media (min-width: 768px) {
+//  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+//	margin-left: -10px;
+//  }
+//}
+//.navbar-default .navbar-brand {
+//  color: #777;
+//}
+//.navbar-brand {
+//  float: left;
+//  padding: 15px 10px;
+//  font-size: 18px;
+//  line-height: 20px;
+//  height: 50px;
+//}
+//a {
+//  color: #26a9ff;
+//  text-decoration: none;
+//}
+//a {
+//  background-color: transparent;
+//}
+//.navbar.navbar-default .navbar-links>li>a {
+//  line-height: 40px;
+//  border-radius: 26px;
+//  margin-top: 10px;
+//  font-size: 14px;
+//  border: 1px solid #646464;
+//  color: #555;
+//  padding: 0 1.4em;
+//}
+//.navbar-nav>li{
+//  padding-left: 5px;
+//  padding-right: 5px;
+//}
+//
+//.navbar.navbar-default .navbar-links>li {
+//  display: inline-block;
+//  padding-left: 5px;
+//  padding-right: 5px;
+//}
+//
+//body.home .head .navbar.navbar-default .navbar-links>li>a {
+//  border: 1px solid #fff;
+//  color: #fff;
+//}
+
+/* My Styles */
+/* face cercuri border-radius: 26px;*/
+//.navbar {
+//  height: 44px;
+//}
+ul.social-buttons {
+  background-color: white;
+  height: 44px;
+  margin: 0;
+}
+ul.social-buttons li {
+  padding: 0;
+}
+ul.social-buttons li a {
+  background-image: url("/img/icons_sprite.png");
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+}
+ul.social-buttons li.evaluate a {
+  background-position: 0 0;
+}
+ul.social-buttons li input.evaluate-input {
+  border: 0 none;
+  font-size: 1.7em;
+  font-weight: normal;
+  height: 44px;
+  padding: 8px 5px 10px 10px;
+  width: 190px;
+  color: #1e76a9;
+  float: right;
+}
+ul.social-buttons li.fb a {
+  background-position: 0 -48px;
+  margin-right: 1px;
+}
+ul.social-buttons li.ok a {
+  background-position: 0 -96px;
+  margin-right: 1px;
+}
+ul.social-buttons li.vk a {
+  background-position: 0 -144px;
+  margin-right: 1px;
+}
+ul.social-buttons li.btn-google a {
+  background-position: 0 -192px;
+  margin-right: 1px;
+}
+ul.social-buttons li.btn-twitter a {
+  background-position: 0 -240px;
+}
+h1.contact-phone {
+  font-size: 35px;
+  margin-top: 5px;
+  color: #063551;
+}
+/* nav-bar navbar-custom-menu */
+.navbar.navbar-default.navbar-custom-menu a.navbar-brand {
+  height: auto;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.menu-wrapper {
+  background: rgba(255,255,255,0.5);
+  margin-left: 264px;
+
+  > #navbar-collapse ul.navbar-nav {
+    li {
+      > a {
+        padding: 0;
+      }
+      margin: 0 15px;
+    }
+    > :first-child {
+      margin-left: 5em;
+    }
+  }
+}
+.navbar-custom-menu #navbar-collapse ul.nav li a {
+  padding: 0 10px;
+  font-size: 17px;
+  line-height: 140px;
+  color: #063551;
+  height: 140px;
+}
+
+ul.nav.nav-login {
+  margin-right: 0;
+  > li {
+    float: none;
+    padding: 0;
+    height: 70px;
+    &:first-child {
+      margin-bottom: 1px;
+    }
+    > a, > button {
+      background-image: url("/img/icons_sprite.png");
+      background-repeat: no-repeat;
+      width: 77px;
+      height: 70px;
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+    }
+
+    &.login-btn a {
+      //background-position: 0 -288px;
+    }
+    &.collapse-btn button {
+      //background-position: 0 -362px;
+      float: none;
+      border: 0 none;
+      border-radius: unset;
+    }
+  }
+}
+
+/* only small screen */
+@media (max-width: @screen-xs-max) {
+
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  /*ul.social-buttons {
+    & li {
+      float: right;
+    }
+    & li.evaluate {
+      float: left;
+    }*/
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+}
+
+
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  body.home .overlay {
+    background-size: 200%;
+    background-position: center top;
+  }
+
+  ul.social-buttons {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+
+    & li {
+      float: right;
+
+      > a {
+        margin-right: 0;
+        margin-left: 1px;
+      }
+
+      &.evaluate {
+        float: left;
+        width: 100%;
+        margin-bottom: 5px;
+        > a {
+          float: left;
+          color: red;
+          margin: 0;
+        }
+        > input.evaluate-input {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  h1.contact-phone {
+    font-size: 2em;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px darkgray;
+  }
+
+  .navbar.navbar-default.navbar-custom-menu a.navbar-brand{
+    margin: 0;
+  }
+  .navbar-custom-menu {
+    .navbar-header {
+      //float: left;
+      //width: 210px;
+      width: 72.5%;
+      margin-left: 0;
+
+      a.navbar-brand {
+        margin-right: 0;
+      }
+    }
+    .menu-wrapper {
+      background: red;
+      margin-left: 0;
+      float: none;
+      margin-top: -117px;
+
+      .nav-login {
+        float: none;
+        > li {
+          text-align: right;
+          > a {
+            max-width: 77px;
+            max-height: 70px;
+          }
+        }
+      }
+    }
+  } //end nav custom menu
+
+  ul.nav.nav-login > li > a, ul.nav.nav-login > li > button {
+    background: none;
+  }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+  ul.social-buttons {
+    & li {
+      float: right;
+      &.evaluate {
+        float: left;
+      }
+    }
+  }
+}

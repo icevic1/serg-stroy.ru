@@ -59,7 +59,7 @@ return [
 
             //You may use this event to set up your assets.
 
-            $theme->asset()->usepath()->add('styles', 'css/style.css');
+            //$theme->asset()->usepath()->add('styles', 'css/style.css');
 
             $theme->asset()->add('jquery', 'packages/jquery/js/jquery.min.js');
         },
