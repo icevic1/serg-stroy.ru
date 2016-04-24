@@ -28,7 +28,33 @@ body.home .overlay {
   /*background-image: linear-gradient(to right,#207ce5 0,#26a9ff 100%);*/
   background: url("/img/main_top_img.png") no-repeat;
   background-size: 100%;
+
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  margin: 0 auto;
+  width: 100%;
 }
+
+body.home .overlay:after {
+  padding-top: 56%; //56.0546875
+  /* this llama image is 800x600 so set the padding top % to match 600/800 = .75 */
+  display: block;
+  content: '';
+}
+body.home .overlay .main-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  //margin-top: 5%;
+}
+
+
 body.home .head .navbar.navbar-default {
   background-color: transparent;
   padding-top: 10px;
@@ -181,72 +207,6 @@ body.home .head .ui-screen img {
   padding-top: 10px;
 }
 
-//#wrap {
-//  min-height: 100%;
-//  height: auto!important;
-//  height: 100%;
-//  margin: 0 auto -146px;
-//  padding: 0 0 146px;
-//}
-//.navbar.navbar-default {
-//  background-color: #fff;
-//  border: none;
-//  letter-spacing: 1px;
-//  text-transform: uppercase;
-//  font-size: 11px;
-//}
-//.navbar.navbar-default .navbar-brand {
-//  /*height: auto;*/
-//  /*padding: 0;*/
-//  /*margin-right: 10px;*/
-//}
-//@media (min-width: 768px) {
-//  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-//	margin-left: -10px;
-//  }
-//}
-//.navbar-default .navbar-brand {
-//  color: #777;
-//}
-//.navbar-brand {
-//  float: left;
-//  padding: 15px 10px;
-//  font-size: 18px;
-//  line-height: 20px;
-//  height: 50px;
-//}
-//a {
-//  color: #26a9ff;
-//  text-decoration: none;
-//}
-//a {
-//  background-color: transparent;
-//}
-//.navbar.navbar-default .navbar-links>li>a {
-//  line-height: 40px;
-//  border-radius: 26px;
-//  margin-top: 10px;
-//  font-size: 14px;
-//  border: 1px solid #646464;
-//  color: #555;
-//  padding: 0 1.4em;
-//}
-//.navbar-nav>li{
-//  padding-left: 5px;
-//  padding-right: 5px;
-//}
-//
-//.navbar.navbar-default .navbar-links>li {
-//  display: inline-block;
-//  padding-left: 5px;
-//  padding-right: 5px;
-//}
-//
-//body.home .head .navbar.navbar-default .navbar-links>li>a {
-//  border: 1px solid #fff;
-//  color: #fff;
-//}
-
 /* My Styles */
 /* face cercuri border-radius: 26px;*/
 //.navbar {
@@ -316,7 +276,7 @@ h1.contact-phone {
 
 .menu-wrapper {
   background: rgba(255,255,255,0.5);
-  margin-left: 264px;
+  //margin-left: 264px;
 
   > #navbar-collapse ul.navbar-nav {
     li {
@@ -368,6 +328,24 @@ ul.nav.nav-login {
     }
   }
 }
+/*************** RESET *************************/
+/* remove spacing between middle columns */
+.no-gutter [class*='col-']:not(:first-child):not(:last-child) {
+  padding-right:0;
+  padding-left:0;
+}
+/* remove right padding from first column */
+.no-gutter [class*='col-']:first-child {
+  padding-right:0;
+}
+/* remove left padding from first column */
+.no-gutter [class*='col-']:last-child {
+  padding-left:0;
+}
+.no-gutter label[class*='col-'].control-label {
+  padding-right:5px;
+}
+/*************** RESET *************************/
 
 /* only small screen */
 @media (max-width: @screen-xs-max) {
@@ -415,6 +393,62 @@ and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
 
+  body.home .overlay {
+    background-size: 240%;
+    background-position: center top;
+  }
+  body.home .overlay:after {
+    padding-top: 135%;
+  }
+  .brand-wrapper {
+    background: #1E76A9;
+  }
+  .toggle-menu-wrapper {
+    text-align: right;
+    background: #1E76A9;
+    margin-left: -1px;
+    a {
+      display: inline-block;
+    }
+    button {
+      float: none;
+      border: 0 none;
+      border-radius: unset;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+    }
+    img {
+      display: inline;
+    }
+  } //end togle menu wrapper
+
+
+  .nav.navbar-nav.navbar-right.social-buttons li.evaluate {
+    a {
+      display: inline-block;
+      width: 15.17241379310345%;
+    }
+    input {
+      display: inline-block;
+      width: 84.82758620689655%
+    }
+
+  }
+
+  .menu-wrapper {
+    #navbar-collapse.navbar-collapse ul.navbar-nav {
+      li {
+        margin: 0;
+
+        a {
+          line-height: inherit;
+          height: inherit;
+        }
+      }
+    }
+  }
+
 }
 
 /* Portrait */
@@ -423,10 +457,8 @@ and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
-  body.home .overlay {
-    background-size: 200%;
-    background-position: center top;
-  }
+
+
 
   ul.social-buttons {
     margin-right: auto;
@@ -463,25 +495,25 @@ and (orientation: portrait) {
     text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px darkgray;
   }
 
-  .navbar.navbar-default.navbar-custom-menu a.navbar-brand{
+  .navbar.navbar-default.navbar-custom-menu a.navbar-brand {
     margin: 0;
   }
+
   .navbar-custom-menu {
     .navbar-header {
       //float: left;
       //width: 210px;
-      width: 72.5%;
-      margin-left: 0;
+      //width: 72.5%;
+      //margin-left: 0;
 
       a.navbar-brand {
         margin-right: 0;
       }
     }
     .menu-wrapper {
-      background: red;
       margin-left: 0;
       float: none;
-      margin-top: -117px;
+      //margin-top: -117px;
 
       .nav-login {
         float: none;
@@ -493,13 +525,18 @@ and (orientation: portrait) {
           }
         }
       }
-    }
-  } //end nav custom menu
 
+
+    }
+  }
+
+  //end nav custom menu
   ul.nav.nav-login > li > a, ul.nav.nav-login > li > button {
     background: none;
   }
-}
+
+
+} // end Portrait on iPhones
 
 /* Landscape */
 @media only screen

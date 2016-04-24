@@ -24,6 +24,27 @@ body.home .overlay {
   /*background-image: linear-gradient(to right,#207ce5 0,#26a9ff 100%);*/
   background: url("/img/main_top_img.png") no-repeat;
   background-size: 100%;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  margin: 0 auto;
+  width: 100%;
+}
+body.home .overlay:after {
+  padding-top: 56%;
+  /* this llama image is 800x600 so set the padding top % to match 600/800 = .75 */
+  display: block;
+  content: '';
+}
+body.home .overlay .main-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: black;
+  text-align: center;
+  display: inline-block;
 }
 body.home .head .navbar.navbar-default {
   background-color: transparent;
@@ -241,7 +262,6 @@ h1.contact-phone {
 }
 .menu-wrapper {
   background: rgba(255, 255, 255, 0.5);
-  margin-left: 264px;
 }
 .menu-wrapper > #navbar-collapse ul.navbar-nav li {
   margin: 0 15px;
@@ -285,6 +305,24 @@ ul.nav.nav-login > li.collapse-btn button {
   border: 0 none;
   border-radius: unset;
 }
+/*************** RESET *************************/
+/* remove spacing between middle columns */
+.no-gutter [class*='col-']:not(:first-child):not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+/* remove right padding from first column */
+.no-gutter [class*='col-']:first-child {
+  padding-right: 0;
+}
+/* remove left padding from first column */
+.no-gutter [class*='col-']:last-child {
+  padding-left: 0;
+}
+.no-gutter label[class*='col-'].control-label {
+  padding-right: 5px;
+}
+/*************** RESET *************************/
 /* only small screen */
 /* Large desktops and laptops */
 /* Landscape tablets and medium desktops */
@@ -302,12 +340,54 @@ ul.nav.nav-login > li.collapse-btn button {
 /* Portrait phones and smaller */
 /* ----------- iPhone 5 and 5S ----------- */
 /* Portrait and Landscape */
-/* Portrait */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   body.home .overlay {
-    background-size: 200%;
+    background-size: 240%;
     background-position: center top;
   }
+  body.home .overlay:after {
+    padding-top: 135%;
+  }
+  .brand-wrapper {
+    background: #1E76A9;
+  }
+  .toggle-menu-wrapper {
+    text-align: right;
+    background: #1E76A9;
+    margin-left: -1px;
+  }
+  .toggle-menu-wrapper a {
+    display: inline-block;
+  }
+  .toggle-menu-wrapper button {
+    float: none;
+    border: 0 none;
+    border-radius: unset;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+  .toggle-menu-wrapper img {
+    display: inline;
+  }
+  .nav.navbar-nav.navbar-right.social-buttons li.evaluate a {
+    display: inline-block;
+    width: 15.17241379310345%;
+  }
+  .nav.navbar-nav.navbar-right.social-buttons li.evaluate input {
+    display: inline-block;
+    width: 84.82758621%;
+  }
+  .menu-wrapper #navbar-collapse.navbar-collapse ul.navbar-nav li {
+    margin: 0;
+  }
+  .menu-wrapper #navbar-collapse.navbar-collapse ul.navbar-nav li a {
+    line-height: inherit;
+    height: inherit;
+  }
+}
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   ul.social-buttons {
     margin-right: auto;
     margin-left: auto;
@@ -341,18 +421,12 @@ ul.nav.nav-login > li.collapse-btn button {
   .navbar.navbar-default.navbar-custom-menu a.navbar-brand {
     margin: 0;
   }
-  .navbar-custom-menu .navbar-header {
-    width: 72.5%;
-    margin-left: 0;
-  }
   .navbar-custom-menu .navbar-header a.navbar-brand {
     margin-right: 0;
   }
   .navbar-custom-menu .menu-wrapper {
-    background: red;
     margin-left: 0;
     float: none;
-    margin-top: -117px;
   }
   .navbar-custom-menu .menu-wrapper .nav-login {
     float: none;
