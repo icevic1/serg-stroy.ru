@@ -305,6 +305,28 @@ ul.nav.nav-login > li.collapse-btn button {
   border: 0 none;
   border-radius: unset;
 }
+.circle-block {
+  border: 1px solid red;
+  border-radius: 115px;
+  display: inline-block;
+  overflow: hidden;
+  width: 230px;
+  height: 230px;
+}
+.circle-block .circle-inner {
+  background-size: 150%;
+  height: inherit;
+  width: inherit;
+}
+.circle-block .img-terms {
+  background: url("/img/terms.png") no-repeat;
+}
+.circle-block .img-quality {
+  background: url("/img/quality.png") no-repeat;
+}
+.circle-block .img-result {
+  background: url("/img/result.png") no-repeat;
+}
 /*************** RESET *************************/
 /* remove spacing between middle columns */
 .no-gutter [class*='col-']:not(:first-child):not(:last-child) {

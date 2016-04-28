@@ -45,14 +45,27 @@
                         </div>
                     </div>
                 </nav>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
 
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>{{--end overlay--}}
+    </div> {{--end head block--}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="circle-block">
+                    <div class="circle-inner img-terms"></div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="circle-block">
+                    <div class="circle-inner img-quality"></div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="circle-block">
+                    <div class="circle-inner img-result"></div>
+                </div>
+            </div>
+        </div>
     </div>
