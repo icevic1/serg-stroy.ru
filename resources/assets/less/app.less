@@ -1,5 +1,6 @@
 @import url("http://fonts.googleapis.com/css?family=Pacifico");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
+@import 'valign.less';
 //@media (max-width: 768px /* @screen-sm */)
 /*@media(max-width:767px){}
 @media(min-width:768px){}
@@ -7,6 +8,9 @@
 @media(min-width:1200px){}*/
 
 @screen-xs-max:768px;
+@color-orange: #ff7e00;
+@color-blue: #0a2c40;
+@color-blue-text: #063551;
 /* ========== GENERAL STYLES ========== */
 
 body {
@@ -262,7 +266,7 @@ ul.social-buttons li.btn-twitter a {
 h1.contact-phone {
   font-size: 35px;
   margin-top: 5px;
-  color: #063551;
+  color: @color-blue-text;
 }
 /* nav-bar navbar-custom-menu */
 .navbar.navbar-default.navbar-custom-menu a.navbar-brand {
@@ -291,7 +295,7 @@ h1.contact-phone {
   padding: 0 10px;
   font-size: 17px;
   line-height: 140px;
-  color: #063551;
+  color: @color-blue-text;
   height: 140px;
 }
 
@@ -326,28 +330,103 @@ ul.nav.nav-login {
   }
 }
 
+.row.circles-holder {
+  padding-top: 35px;
+  padding-bottom: 35px;
 
-.circle-block {
-  border: 1px solid red;
-  border-radius: 115px;
+  .circle-block {
+    border: 1px solid red;
+    border-radius: 115px;
+    display: inline-block;
+    overflow: hidden;
+    //width: 350px;
+    //height: 232px
+    width: 230px;
+    height: 230px;
+
+    .circle-inner {
+      background-size: 150%;
+      height: inherit;
+      width: inherit;
+    }
+
+    .img-terms {background: url("/img/terms.png") no-repeat;}
+    .img-quality {background: url("/img/quality.png") no-repeat;}
+    .img-result {background: url("/img/result.png") no-repeat;}
+  } // end circle-block
+
+  .title-circle {
+    color: @color-blue-text;
+    h2 {
+      font-size: 26px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+  }
+} //end .row.circle-holder
+
+.row.design-holder {
+  .title h1 {
+    color: @color-orange;
+    font-size: 35px;
+  }
+}
+/* Button design  app-btn btn-orange*/
+.app-btn {
+  border: 1px solid #FFFFFF;
+  font-size: 31px;
+  padding: 10px 35px;
   display: inline-block;
-  overflow: hidden;
-  //width: 350px;
-  //height: 232px
-  width: 230px;
-  height: 230px;
+  line-height: normal;
 
-  .circle-inner {
-    background-size: 150%;
-    height: inherit;
-    width: inherit;
+  &.btn-orange {
+    background-color: @color-orange;
+    color: #FFFFFF;
+  }
+  &.btn-orange:hover {
+    background-color: darken(@color-orange, 5%);
+    color: darken(#FFFFFF, 10%);
+    text-decoration: none;
+  }
+}
+/* end button desing */
+
+.design-holder-blue {
+  background-color: @color-blue;
+  min-height: 415px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .question-block {
+    h1.bonuses {
+      color: @color-orange;
+    }
+    > p {
+      font-size: 16px;
+      color: #FFFFFF;
+    }
   }
 
-  .img-terms {background: url("/img/terms.png") no-repeat;}
-  .img-quality {background: url("/img/quality.png") no-repeat;}
-  .img-result {background: url("/img/result.png") no-repeat;}
 
+  ul.services-list {
+    list-style: none;
+
+    li {
+      font-size: 14px;
+      color: #FFFFFF;
+      line-height: 1.5;
+    }
+
+    li:before {
+      content: "\002022"; /* • Insert content that looks like bullets */
+      padding-right: 8px;
+      color: @color-orange; /* Or a color you prefer */
+    }
+  }
 }
+
+
 /*************** RESET *************************/
 /* remove spacing between middle columns */
 .no-gutter [class*='col-']:not(:first-child):not(:last-child) {
