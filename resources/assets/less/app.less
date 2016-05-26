@@ -366,10 +366,11 @@ ul.nav.nav-login {
   }
 } //end .row.circle-holder
 
-.row.design-holder {
+.row.design-holder, .projects-holder, .preices-holder {
   .title h1 {
     color: @color-orange;
     font-size: 35px;
+    margin: 35px 0;
   }
 }
 /* Button design  app-btn btn-orange*/
@@ -390,7 +391,7 @@ ul.nav.nav-login {
     text-decoration: none;
   }
 }
-/* end button desing */
+/* end button design */
 
 .design-holder-blue {
   background-color: @color-blue;
@@ -424,8 +425,70 @@ ul.nav.nav-login {
       color: @color-orange; /* Or a color you prefer */
     }
   }
+} /*end design-holder-blue*/
+
+.preices-holder-content {
+  background-color: #f2f2f2;
+  min-height: 415px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .price-pack-holder {
+    > .row {
+      margin-bottom: 40px;
+    }
+  }
+
+  ul.services-list {
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0;
+
+    li {
+      font-size: 14px;
+      color: @color-blue-text;
+      line-height: 1.5;
+    }
+
+    li:before {
+      content: "\002022"; /* • Insert content that looks like bullets */
+      padding-right: 8px;
+      color: @color-orange; /* Or a color you prefer */
+    }
+  }
+
+  .text-right {
+    > h1 {
+      color: @color-blue;
+
+      > span {
+        font-size: 31px;
+      }
+    }
+  }
+} /*end design-holder-blue*/
+
+.carousel,
+.item,
+.active {
+  height: 100%;
 }
 
+.carousel-inner {
+  height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 
 /*************** RESET *************************/
 /* remove spacing between middle columns */

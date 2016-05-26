@@ -124,3 +124,111 @@
             </div>
         </div>
     </div>
+    <!-- Projects slider block -->
+    <div class="container-fluid">
+        <div class="row projects-holder">
+            <div class="col-sm-12 title text-center">
+                <h1>Проекты</h1>
+            </div>
+        </div>
+        <div class="row projects-holder-slider">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for Slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <!-- Set the first background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('{{asset('img/project_1.png')}}');"><img src="{{asset('img/project_1.png')}}" /></div>
+                        {{--<div class="carousel-caption"><h2>Caption 1</h2></div>--}}
+                    </div>
+                    <div class="item">
+                        <!-- Set the second background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('{{asset('img/project_1.png')}}"><img src="{{asset('img/project_1.png')}}" /></div>
+                    </div>
+                    <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('{{asset('img/project_1.png')}}');"><img src="{{asset('img/project_1.png')}}" /></div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+
+            </div><!-- end of carusel-->
+
+
+
+        </div>
+    </div><!-- end Projects slider block -->
+
+    <!-- Prices block -->
+    <div class="container-fluid">
+        <div class="row preices-holder">
+            <div class="col-sm-12 title text-center">
+                <h1>Цэны</h1>
+            </div>
+        </div>
+        <div class="row preices-holder-content">
+            <div class="col-md-12">
+                <div class="container price-pack-holder">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <ul class="services-list">
+                                <li>Обмерный чертеж помещения</li>
+                                <li>План после перепланировки с экспликацией помещений</li>
+                                <li>План после перепланировки с размерами, уровнем пола и высотами</li>
+                                <li>План демонтажа перегородок</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <h1>800 <span>руб./м<sup>2</sup></span></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <ul class="services-list">
+                                <li>Обмерный чертеж помещения</li>
+                                <li>План после перепланировки с экспликацией помещений</li>
+                                <li>План после перепланировки с размерами, уровнем пола и высотами</li>
+                                <li>План демонтажа перегородок</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <h1>1500 <span>руб.</span></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <ul class="services-list">
+                                <li>Регулярные выезды автора проекта на объект.</li>
+                                <li>Регулярные выезды автора проекта в магазины.</li>
+                                <li>Консультации строителей и поставщиков.</li>
+                                <li>Своевременное внесение в проект изменений с согласия заказчика.</li>
+                                <li>Консультация заказчика по выбору декоративных и отделочных материалов.</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <h1>1500 <span>руб.</span></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a class="app-btn btn-orange" href="">Прай-лист</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end Projects slider block -->
+
