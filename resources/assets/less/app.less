@@ -387,6 +387,7 @@ ul.nav.nav-login {
   &.btn-orange {
     background-color: @color-orange;
     color: #FFFFFF;
+    white-space: nowrap;
   }
   &.btn-orange:hover {
     background-color: darken(@color-orange, 5%);
@@ -629,6 +630,10 @@ and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
 
+  .preices-holder-content .price-pack-holder > .row:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
   body.home .overlay {
     background-size: 240%;
     background-position: center top;
@@ -687,14 +692,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
 }
 
-/* Portrait */
+/* Portrait on iPhones */
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
-
-
 
   ul.social-buttons {
     margin-right: auto;
@@ -771,10 +774,34 @@ and (orientation: portrait) {
     background: none;
   }
 
+  .price-list {
+    text-align: center;
+  }
+  .design-holder-blue ul.services-list {
+    padding-left: 0px;
+    margin-top: 10px;
+  }
+
+  .reviews-holder-slider .carousel .carousel-control {
+    top: 19%;
+  }
+  .review-img-block {
+    text-align: center;
+  }
+
+  .reviews-holder-slider .review-content-block {
+    h1 {
+      font-size: 30px;
+      text-align: center;
+    }
+    .quoted p {
+      width: 85%;
+    }
+  }
 
 } // end Portrait on iPhones
 
-/* Landscape */
+/* Landscape iPhone*/
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 568px)
@@ -789,4 +816,22 @@ and (orientation: landscape) {
       }
     }
   }
+  .reviews-holder-slider {
+    .circle-block {
+      float: left;
+      margin-right: 10px;
+    }
+    .review-content-block {
+      .quoted p {
+        width: 90%;
+      }
+      h1:after {
+        clear: both;
+        display: block;
+        content: '';
+      }
+    }
+  }
+
+
 }

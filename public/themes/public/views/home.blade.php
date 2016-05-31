@@ -222,7 +222,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 text-right">
+                        <div class="col-sm-12 price-list text-right">
                             <a class="app-btn btn-orange" href="">Прай-лист</a>
                         </div>
                     </div>
@@ -238,7 +238,7 @@
             </div>
         </div>
         <div class="row reviews-holder-slider">
-            <div id="myCarousel2" class="carousel slide" data-ride="carousel-">
+            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for Slides -->
                 <div class="carousel-inner">
                     <div class="item container active">
