@@ -231,7 +231,7 @@
         </div>
     </div><!-- end Projects slider block -->
     <!-- Projects feedback block -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row reviews-holder">
             <div class="col-sm-12 title text-center">
                 <h1 class="color-orange">Отзывы</h1>
@@ -240,36 +240,36 @@
         <div class="row reviews-holder-slider">
             <div id="myCarousel2" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for Slides -->
-                <div class="carousel-inner">
-                    <div class="item container active">
-                        <!-- Set the first background image using inline CSS below. -->
-                        <div class="row circles-holder">
-                            <div class="col-sm-3 col-sm-offset-1 review-img-block">
-                                <div class="circle-block">
-                                    <div class="circle-inner img-review"></div>
+                <div class="container">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <!-- Set the first background image using inline CSS below. -->
+                            <div class="row circles-holder">
+                                <div class="col-sm-3 col-sm-offset-1 review-img-block">
+                                    <div class="circle-block">
+                                        <div class="circle-inner img-review"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 review-content-block">
+                                    <h1>Юля Студеникина</h1>
+                                    <div class="quoted"><p>Для меня было истинным удовольствие работать с Екатериной Петровой. Она талантливый, креативный, яркий человек. Энергичная и жизнерадостная! Каждая ее работа не похожа на предыдущую, стили неповторимы. Она тонко чувствует Ваши потребности и предпочтения. Результат превосходит все ожидания!<br />Всем рекомендую!</p></div>
                                 </div>
                             </div>
-                            <div class="col-sm-7 review-content-block">
-                                <h1>Юля Студеникина</h1>
-                                <div class="quoted"><p>Для меня было истинным удовольствие работать с Екатериной Петровой. Она талантливый, креативный, яркий человек. Энергичная и жизнерадостная! Каждая ее работа не похожа на предыдущую, стили неповторимы. Она тонко чувствует Ваши потребности и предпочтения. Результат превосходит все ожидания!<br />Всем рекомендую!</p></div>
-                            </div>
                         </div>
-                        {{--<div class="carousel-caption"><h2>Caption 1</h2></div>--}}
-                    </div>
-                    <div class="item container">
-                        <!-- Set the first background image using inline CSS below. -->
-                        <div class="row circles-holder">
-                            <div class="col-sm-3 col-sm-offset-1 review-img-block">
-                                <div class="circle-block">
-                                    <div class="circle-inner img-review"></div>
+                        <div class="item">
+                            <!-- Set the first background image using inline CSS below. -->
+                            <div class="row circles-holder">
+                                <div class="col-sm-3 col-sm-offset-1 review-img-block">
+                                    <div class="circle-block">
+                                        <div class="circle-inner img-review"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 review-content-block">
+                                    <h1>Юля Студеникина</h1>
+                                    <div class="quoted"><p>Для меня было истинным удовольствие работать с Екатериной Петровой. Она талантливый, креативный, яркий человек. Энергичная и жизнерадостная! Каждая ее работа не похожа на предыдущую, стили неповторимы. Она тонко чувствует Ваши потребности и предпочтения. Результат превосходит все ожидания!<br />Всем рекомендую!</p></div>
                                 </div>
                             </div>
-                            <div class="col-sm-7 review-content-block">
-                                <h1>Юля Студеникина</h1>
-                                <div class="quoted"><p>Для меня было истинным удовольствие работать с Екатериной Петровой. Она талантливый, креативный, яркий человек. Энергичная и жизнерадостная! Каждая ее работа не похожа на предыдущую, стили неповторимы. Она тонко чувствует Ваши потребности и предпочтения. Результат превосходит все ожидания!<br />Всем рекомендую!</p></div>
-                            </div>
                         </div>
-                        {{--<div class="carousel-caption"><h2>Caption 1</h2></div>--}}
                     </div>
                 </div>
                 <!-- Controls -->
@@ -280,10 +280,61 @@
                     <span class="ionicons ion-ios-arrow-forward"></span>
                 </a>
             </div><!-- end of carusel-->
-            <div class="row">
-                <div class="col-sm-12 text-right">
-                    <a href="" class="app-btn btn-orange">Отзывы клиентов</a>
-                </div>
+            <div class="container text-right">
+                <a href="" class="app-btn btn-orange">Отзывы клиентов</a>
+            </div>
+        </div>
+    </div><!-- end Projects slider block -->
+    <!-- Projects video feedback block -->
+    <div class="container-fluid bg-gray">
+        <div class="row reviews-holder">
+            <div class="col-sm-12 title text-center">
+                <h1 class="color-orange">Видео Отзывы</h1>
+            </div>
+        </div>
+        <div class="row vreviews-holder-slider">
+            <div id="myCarousel3" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for Slides -->
+                <div class="container">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row circles-holder">
+                                <div class="col-sm-3 col-sm-offset-1 review-img-block">
+                                    <div class="circle-block">
+                                        <div class="circle-inner img-vreview"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 review-content-block">
+                                    <h1>Уолтер Брюс Уиллис</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <!-- Set the first background image using inline CSS below. -->
+                            <div class="row circles-holder">
+                                <div class="col-sm-3 col-sm-offset-1 review-img-block">
+                                    <div class="circle-block">
+                                        <div class="circle-inner img-review"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 review-content-block">
+                                    <h1>Юля Студеникина</h1>
+                                </div>
+                            </div>
+                            {{--<div class="carousel-caption"><h2>Caption 1</h2></div>--}}
+                        </div>
+                    </div><!-- end carousel-inner -->
+                </div><!-- end container -->
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel3" data-slide="prev">
+                    <span class="ionicons ion-ios-arrow-back"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel3" data-slide="next">
+                    <span class="ionicons ion-ios-arrow-forward"></span>
+                </a>
+            </div><!-- end of carusel-->
+            <div class="container text-right">
+                <a href="" class="app-btn btn-orange">Отзывы клиентов</a>
             </div>
         </div>
     </div><!-- end Projects slider block -->

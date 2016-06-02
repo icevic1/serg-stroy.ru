@@ -190,6 +190,9 @@ body.home .overlay .main-overlay {
 .color-orange {
   color: #ff7e00;
 }
+.bg-gray {
+  background-color: #f2f2f2;
+}
 body.home .head .navbar.navbar-default {
   background-color: transparent;
   padding-top: 10px;
@@ -502,7 +505,6 @@ ul.nav.nav-login > li.collapse-btn button {
 .app-btn.btn-orange {
   background-color: #ff7e00;
   color: #FFFFFF;
-  white-space: nowrap;
 }
 .app-btn.btn-orange:hover {
   background-color: #e67100;
@@ -572,7 +574,8 @@ ul.nav.nav-login > li.collapse-btn button {
   font-size: 31px;
 }
 /*end design-holder-blue*/
-.reviews-holder-slider .circle-block {
+.reviews-holder-slider .circle-block,
+.vreviews-holder-slider .circle-block {
   /* border: 1px solid red;
     border-radius: 115px;
     display: inline-block;
@@ -588,21 +591,29 @@ ul.nav.nav-login > li.collapse-btn button {
       width: inherit;
     }*/
 }
-.reviews-holder-slider .circle-block .img-review {
+.reviews-holder-slider .circle-block .img-review,
+.vreviews-holder-slider .circle-block .img-review {
   background: url("/img/review.png") no-repeat;
 }
-.reviews-holder-slider .review-content-block h1 {
+.reviews-holder-slider .circle-block .img-vreview,
+.vreviews-holder-slider .circle-block .img-vreview {
+  background: url("/img/vreview.png") no-repeat;
+}
+.reviews-holder-slider .review-content-block h1,
+.vreviews-holder-slider .review-content-block h1 {
   font-size: 46px;
   margin-top: 0;
   color: #ff7e00;
 }
-.reviews-holder-slider .review-content-block .quoted p {
+.reviews-holder-slider .review-content-block .quoted p,
+.vreviews-holder-slider .review-content-block .quoted p {
   font-size: 16px;
   color: #063551;
   float: left;
   width: 94%;
 }
-.reviews-holder-slider .review-content-block .quoted:before {
+.reviews-holder-slider .review-content-block .quoted:before,
+.vreviews-holder-slider .review-content-block .quoted:before {
   background-image: url("/img/icons_sprite.png");
   background-position: 1px -439px;
   background-color: white;
@@ -612,6 +623,10 @@ ul.nav.nav-login > li.collapse-btn button {
   height: 28px;
   width: 29px;
   float: left;
+}
+.reviews-holder-slider > .container .app-btn,
+.vreviews-holder-slider > .container .app-btn {
+  margin-bottom: 30px;
 }
 .carousel .carousel-control {
   width: 100px;
@@ -790,16 +805,27 @@ ul.nav.nav-login > li.collapse-btn button {
     padding-left: 0px;
     margin-top: 10px;
   }
-  .reviews-holder-slider .carousel .carousel-control {
+  .reviews-holder-slider .text-right,
+  .vreviews-holder-slider .text-right {
+    text-align: center;
+  }
+  .reviews-holder-slider .app-btn.btn-orange,
+  .vreviews-holder-slider .app-btn.btn-orange {
+    font-size: 25px;
+  }
+  .reviews-holder-slider .carousel .carousel-control,
+  .vreviews-holder-slider .carousel .carousel-control {
     top: 19%;
   }
   .review-img-block {
     text-align: center;
   }
+  .reviews-holder-slider .review-content-block h1,
   .reviews-holder-slider .review-content-block h1 {
     font-size: 30px;
     text-align: center;
   }
+  .reviews-holder-slider .review-content-block .quoted p,
   .reviews-holder-slider .review-content-block .quoted p {
     width: 85%;
   }
@@ -812,14 +838,17 @@ ul.nav.nav-login > li.collapse-btn button {
   ul.social-buttons li.evaluate {
     float: left;
   }
-  .reviews-holder-slider .circle-block {
+  .reviews-holder-slider .circle-block,
+  .vreviews-holder-slider .circle-block {
     float: left;
     margin-right: 10px;
   }
-  .reviews-holder-slider .review-content-block .quoted p {
+  .reviews-holder-slider .review-content-block .quoted p,
+  .vreviews-holder-slider .review-content-block .quoted p {
     width: 90%;
   }
-  .reviews-holder-slider .review-content-block h1:after {
+  .reviews-holder-slider .review-content-block h1:after,
+  .vreviews-holder-slider .review-content-block h1:after {
     clear: both;
     display: block;
     content: '';
