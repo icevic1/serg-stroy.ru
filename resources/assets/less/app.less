@@ -12,6 +12,7 @@
 @color-blue: #0a2c40;
 @color-blue-text: #063551;
 @color-gray: #f2f2f2;
+@color-gray-dark: #7d7d7d;
 /* ========== GENERAL STYLES ========== */
 
 body {
@@ -372,7 +373,7 @@ ul.nav.nav-login {
   }
 } //end .row.circle-holder
 
-.row.design-holder, .projects-holder, .preices-holder {
+.row.design-holder, .projects-holder, .preices-holder{
   .title h1 {
     color: @color-orange;
     font-size: 35px;
@@ -383,9 +384,17 @@ ul.nav.nav-login {
 .app-btn {
   border: 1px solid #FFFFFF;
   font-size: 31px;
-  padding: 10px 35px;
+  line-height: 31px;
+  padding: 6px 12px;
   display: inline-block;
-  line-height: normal;
+  //padding: 0;
+  //min-width: 310px;
+  height: 50px;
+  text-align: center;
+  white-space: normal;
+  &:not(.btn-block) {
+    min-width: 310px;
+  }
 
   &.btn-orange {
     background-color: @color-orange;
@@ -478,21 +487,6 @@ ul.nav.nav-login {
 .reviews-holder-slider, .vreviews-holder-slider {
 
   .circle-block {
-   /* border: 1px solid red;
-    border-radius: 115px;
-    display: inline-block;
-    overflow: hidden;
-    //width: 350px;
-    //height: 232px
-    width: 230px;
-    height: 230px;
-
-    .circle-inner {
-      background-size: 150%;
-      height: inherit;
-      width: inherit;
-    }*/
-
     .img-review {background: url("/img/review.png") no-repeat;}
     .img-vreview {background: url("/img/vreview.png") no-repeat;}
   } // end circle-block
@@ -533,6 +527,49 @@ ul.nav.nav-login {
     margin-bottom: 30px;
   }
 } //end reviews-holder-slider
+
+/* Question block */
+.question-holder {
+  .title {
+    color: @color-orange;
+    font-size: 35px;
+  }
+  .question-holder-content {
+    background-color: @color-blue;
+    .q-title {
+      color: @color-orange;
+      font-size: 46px;
+      margin-bottom: 5px;
+      line-height: 1;
+    }
+    .sub-qtitle {
+      color: #FFFFFF;
+      font-size: 16px;
+    }
+    .q-form {
+      margin-top: 20px;
+      margin-bottom: 45px;
+
+      .q-text {
+        display: none;
+      }
+
+      input[type="text"], textarea {
+        border-radius: 0;
+        border: 1px solid @color-gray-dark;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        height: 53px;
+      }
+      textarea {
+        //margin-top: 20px;
+      }
+    }
+  }
+}
+/*------- RESETS --------*/
 .carousel {
   .carousel-control {
     width: 100px;
@@ -696,7 +733,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
   }
 
-}
+  .question-holder .question-holder-content .q-form input[name="q_name"] {
+    margin-bottom: 20px;
+  }
+  .q-action {
+    text-align: right;
+  }
+} /* END Portrait and Landscape */
 
 /* Portrait on iPhones */
 @media only screen
@@ -732,6 +775,11 @@ and (orientation: portrait) {
         }
       }
     }
+  }
+
+  .app-btn:not(.btn-block) {
+    width: 100%;
+    min-width: initial;
   }
 
   h1.contact-phone {
@@ -770,8 +818,6 @@ and (orientation: portrait) {
           }
         }
       }
-
-
     }
   }
 
@@ -782,6 +828,7 @@ and (orientation: portrait) {
 
   .price-list {
     text-align: center;
+    padding: 0;
   }
   .design-holder-blue ul.services-list {
     padding-left: 0px;
@@ -810,6 +857,13 @@ and (orientation: portrait) {
     .quoted p {
       width: 85%;
     }
+  }
+  .price-pack-holder .row >div {
+    padding: 0;
+  }
+
+  .question-holder .question-holder-content .q-title {
+    font-size: 35px;
   }
 
 } // end Portrait on iPhones

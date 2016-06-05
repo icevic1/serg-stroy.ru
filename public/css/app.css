@@ -498,9 +498,15 @@ ul.nav.nav-login > li.collapse-btn button {
 .app-btn {
   border: 1px solid #FFFFFF;
   font-size: 31px;
-  padding: 10px 35px;
+  line-height: 31px;
+  padding: 6px 12px;
   display: inline-block;
-  line-height: normal;
+  height: 50px;
+  text-align: center;
+  white-space: normal;
+}
+.app-btn:not(.btn-block) {
+  min-width: 310px;
 }
 .app-btn.btn-orange {
   background-color: #ff7e00;
@@ -574,23 +580,6 @@ ul.nav.nav-login > li.collapse-btn button {
   font-size: 31px;
 }
 /*end design-holder-blue*/
-.reviews-holder-slider .circle-block,
-.vreviews-holder-slider .circle-block {
-  /* border: 1px solid red;
-    border-radius: 115px;
-    display: inline-block;
-    overflow: hidden;
-    //width: 350px;
-    //height: 232px
-    width: 230px;
-    height: 230px;
-
-    .circle-inner {
-      background-size: 150%;
-      height: inherit;
-      width: inherit;
-    }*/
-}
 .reviews-holder-slider .circle-block .img-review,
 .vreviews-holder-slider .circle-block .img-review {
   background: url("/img/review.png") no-repeat;
@@ -628,6 +617,41 @@ ul.nav.nav-login > li.collapse-btn button {
 .vreviews-holder-slider > .container .app-btn {
   margin-bottom: 30px;
 }
+/* Question block */
+.question-holder .title {
+  color: #ff7e00;
+  font-size: 35px;
+}
+.question-holder .question-holder-content {
+  background-color: #0a2c40;
+}
+.question-holder .question-holder-content .q-title {
+  color: #ff7e00;
+  font-size: 46px;
+  margin-bottom: 5px;
+  line-height: 1;
+}
+.question-holder .question-holder-content .sub-qtitle {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.question-holder .question-holder-content .q-form {
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+.question-holder .question-holder-content .q-form .q-text {
+  display: none;
+}
+.question-holder .question-holder-content .q-form input[type="text"],
+.question-holder .question-holder-content .q-form textarea {
+  border-radius: 0;
+  border: 1px solid #7d7d7d;
+  margin-bottom: 20px;
+}
+.question-holder .question-holder-content .q-form input[type="text"] {
+  height: 53px;
+}
+/*------- RESETS --------*/
 .carousel .carousel-control {
   width: 100px;
   height: 60px;
@@ -741,7 +765,14 @@ ul.nav.nav-login > li.collapse-btn button {
     line-height: inherit;
     height: inherit;
   }
+  .question-holder .question-holder-content .q-form input[name="q_name"] {
+    margin-bottom: 20px;
+  }
+  .q-action {
+    text-align: right;
+  }
 }
+/* END Portrait and Landscape */
 /* Portrait on iPhones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   ul.social-buttons {
@@ -768,6 +799,10 @@ ul.nav.nav-login > li.collapse-btn button {
   }
   ul.social-buttons li.evaluate > input.evaluate-input {
     width: auto;
+  }
+  .app-btn:not(.btn-block) {
+    width: 100%;
+    min-width: initial;
   }
   h1.contact-phone {
     font-size: 2em;
@@ -800,6 +835,7 @@ ul.nav.nav-login > li.collapse-btn button {
   }
   .price-list {
     text-align: center;
+    padding: 0;
   }
   .design-holder-blue ul.services-list {
     padding-left: 0px;
@@ -828,6 +864,12 @@ ul.nav.nav-login > li.collapse-btn button {
   .reviews-holder-slider .review-content-block .quoted p,
   .reviews-holder-slider .review-content-block .quoted p {
     width: 85%;
+  }
+  .price-pack-holder .row > div {
+    padding: 0;
+  }
+  .question-holder .question-holder-content .q-title {
+    font-size: 35px;
   }
 }
 /* Landscape iPhone*/

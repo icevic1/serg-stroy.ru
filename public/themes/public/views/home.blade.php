@@ -229,7 +229,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- end Projects slider block -->
+    </div><!-- end Projects prices block -->
     <!-- Projects feedback block -->
     <div class="container-fluid">
         <div class="row reviews-holder">
@@ -338,4 +338,51 @@
             </div>
         </div>
     </div><!-- end Projects slider block -->
+    <!-- Question block -->
+    <div class="container-fluid question-holder">
+        <div class="row">
+            <div class="col-sm-12 title text-center">
+                <h1>Вопросы</h1>
+            </div>
+        </div>
+        <div class="row question-holder-content">
+            <div class="col-md-12">
+                <div class="container price-pack-holder">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="q-title">Остались вопросы?</h2>
+                            <span class="sub-qtitle">Задать их нашему специалисту</span>
+                        </div>
+                    </div>
+                    <div class="row q-form">
+                        <form class="form-horizontal">
+                            <div class="col-sm-8">
+                                <div class="row">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="q_name" class="form-control" id="q_name" placeholder="Ваше имя" />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="q_phone" class="form-control" id="q_phone" placeholder="Номер телефона">
+                                        </div>
+                                </div>
+                                <div class="row q-text">
+                                    <div class="col-sm-12">
+                                        <textarea class="form-control" rows="3" placeholder="Ваш вопрос"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 q-action">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn app-btn btn-orange btn-block">Задать вопрос</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end Projects slider block -->
+
 

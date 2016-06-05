@@ -1,4 +1,9 @@
 $(function () {
+
+    $('.q-form input[type="text"]').focus(function() {
+        $(".q-text").slideDown();
+    });
+
     jQuery.validator.setDefaults({
         debug: true,
         success: "valid",
