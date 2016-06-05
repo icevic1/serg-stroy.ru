@@ -436,7 +436,7 @@ ul.nav.nav-login {
     }
 
     li:before {
-      content: "\002022"; /* • Insert content that looks like bullets */
+      content: "\002022"; /* â€¢ Insert content that looks like bullets */
       padding-right: 8px;
       color: @color-orange; /* Or a color you prefer */
     }
@@ -467,7 +467,7 @@ ul.nav.nav-login {
     }
 
     li:before {
-      content: "\002022"; /* • Insert content that looks like bullets */
+      content: "\002022"; /* â€¢ Insert content that looks like bullets */
       padding-right: 8px;
       color: @color-orange; /* Or a color you prefer */
     }
@@ -530,9 +530,10 @@ ul.nav.nav-login {
 
 /* Question block */
 .question-holder {
-  .title {
+  .title h1 {
     color: @color-orange;
     font-size: 35px;
+    line-height: 1;
   }
   .question-holder-content {
     background-color: @color-blue;
@@ -563,12 +564,18 @@ ul.nav.nav-login {
       input[type="text"] {
         height: 53px;
       }
-      textarea {
-        //margin-top: 20px;
-      }
     }
   }
 }
+/* Question block */
+.map-holder {
+  .title h1 {
+    color: @color-orange;
+    font-size: 35px;
+    line-height: 1;
+  }
+}
+
 /*------- RESETS --------*/
 .carousel {
   .carousel-control {

@@ -384,5 +384,18 @@
             </div>
         </div>
     </div><!-- end Projects slider block -->
+    <!-- Question block -->
+    <div class="container-fluid map-holder">
+        <div class="row">
+            <div class="col-sm-12 title text-center">
+                <h1>Где мы находимся</h1>
+            </div>
+        </div>
+        <div class="row map-content">
+            <div class="col-md-12">
+                <div id="map" style="width: 100%; height: 400px"></div>
+            </div>
+        </div>
+    </div><!-- end Projects slider block -->
 
 

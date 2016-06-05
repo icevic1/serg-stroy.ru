@@ -541,7 +541,7 @@ ul.nav.nav-login > li.collapse-btn button {
 }
 .design-holder-blue ul.services-list li:before {
   content: "\002022";
-  /* � Insert content that looks like bullets */
+  /* • Insert content that looks like bullets */
   padding-right: 8px;
   color: #ff7e00;
   /* Or a color you prefer */
@@ -568,7 +568,7 @@ ul.nav.nav-login > li.collapse-btn button {
 }
 .preices-holder-content ul.services-list li:before {
   content: "\002022";
-  /* � Insert content that looks like bullets */
+  /* • Insert content that looks like bullets */
   padding-right: 8px;
   color: #ff7e00;
   /* Or a color you prefer */
@@ -618,9 +618,10 @@ ul.nav.nav-login > li.collapse-btn button {
   margin-bottom: 30px;
 }
 /* Question block */
-.question-holder .title {
+.question-holder .title h1 {
   color: #ff7e00;
   font-size: 35px;
+  line-height: 1;
 }
 .question-holder .question-holder-content {
   background-color: #0a2c40;
@@ -650,6 +651,12 @@ ul.nav.nav-login > li.collapse-btn button {
 }
 .question-holder .question-holder-content .q-form input[type="text"] {
   height: 53px;
+}
+/* Question block */
+.map-holder .title h1 {
+  color: #ff7e00;
+  font-size: 35px;
+  line-height: 1;
 }
 /*------- RESETS --------*/
 .carousel .carousel-control {
