@@ -397,5 +397,45 @@
             </div>
         </div>
     </div><!-- end Projects slider block -->
+    <!-- Question block -->
+    <div class="container-fluid stages-holder">
+        <div class="row">
+            <div class="col-sm-12 title text-center">
+                <h1>Этапы работ</h1>
+            </div>
+        </div>
+        <div class="row u-form">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        <form class="form-horizontal">
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="u_name" class="form-control" id="u_name" placeholder="Имя клиента" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="u_phone" class="form-control" id="u_phone" placeholder="Номер телефона">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 q-action">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn app-btn btn-orange btn-block">Войти</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row stages-content">
+            <div class="col-md-12">
+                <div id="map2" style="width: 100%; height: 400px"> sfds fsd fsd f </div>
+            </div>
+        </div>
+    </div><!-- end Projects slider block -->
 
 

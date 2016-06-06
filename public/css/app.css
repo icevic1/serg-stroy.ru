@@ -658,6 +658,27 @@ ul.nav.nav-login > li.collapse-btn button {
   font-size: 35px;
   line-height: 1;
 }
+.stages-holder .title h1 {
+  color: #ff7e00;
+  font-size: 35px;
+  line-height: 1;
+}
+.stages-holder .u-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.stages-holder .u-form input[type="text"],
+.stages-holder .u-form textarea {
+  border-radius: 0;
+  border: 1px solid #7d7d7d;
+  margin-bottom: 20px;
+}
+.stages-holder .u-form input[type="text"] {
+  height: 50px;
+}
+.stages-holder .stages-content {
+  background-color: #0a2c40;
+}
 /*------- RESETS --------*/
 .carousel .carousel-control {
   width: 100px;
