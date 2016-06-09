@@ -1,6 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Pacifico");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic");
 @import 'valign.less';
+@import 'responsive-calendar.less';
 //@media (max-width: 768px /* @screen-sm */)
 /*@media(max-width:767px){}
 @media(min-width:768px){}
@@ -13,6 +14,7 @@
 @color-blue-text: #063551;
 @color-gray: #f2f2f2;
 @color-gray-dark: #7d7d7d;
+
 /* ========== GENERAL STYLES ========== */
 
 body {
@@ -599,6 +601,27 @@ ul.nav.nav-login {
 
   .stages-content {
     background-color: @color-blue;
+    padding: 10px 0;
+
+    .u-details {
+      margin-top: 20px;
+      h2 {
+        margin: 0;
+      }
+      > div {
+        font-size: 18px;
+      }
+    }
+
+    .stage-img {
+      min-width: 660px;
+      height: 345px;
+      background-image: url("/img/calendar_def.jpg");
+      background-repeat: no-repeat;
+      background-position: 0 -30px;
+      background-size: 100% 144%;
+      display: block;
+    }
   }
 }
 
@@ -658,6 +681,7 @@ ul.nav.nav-login {
 .no-gutter label[class*='col-'].control-label {
   padding-right:5px;
 }
+
 /*************** RESET *************************/
 
 /* only small screen */
@@ -897,6 +921,13 @@ and (orientation: portrait) {
 
   .question-holder .question-holder-content .q-title {
     font-size: 35px;
+  }
+
+  .stages-holder .stages-content .stage-img {
+    min-width: 100%;
+    background-position: 0 0;
+    background-size: 100% auto;
+    height: auto;
   }
 
 } // end Portrait on iPhones

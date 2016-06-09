@@ -23,6 +23,7 @@
     {!! Theme::partial('footer') !!}
     <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>
     <script src="{{ asset('js/public.js') }}"></script>
+    <script src="{{ asset('js/responsive-calendar.js') }}"></script>
     {!! Theme::asset()->container('footer')->scripts() !!}
 </body>
-</ht
+</html>

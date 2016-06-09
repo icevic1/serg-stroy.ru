@@ -433,7 +433,46 @@
         </div>
         <div class="row stages-content">
             <div class="col-md-12">
-                <div id="map2" style="width: 100%; height: 400px"> sfds fsd fsd f </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Responsive calendar - START -->
+                                    <div class="responsive-calendar">
+                                        <div class="controls">
+                                            <a class="pull-left" data-go="prev"><span class="ionicons ion-ios-arrow-back"></span></a>
+                                            <h4><span data-head-year></span> <span data-head-month></span></h4>
+                                            <a class="pull-right" data-go="next"><span class="ionicons ion-ios-arrow-forward"></span></a>
+                                        </div><div class="clearfix"></div>
+                                        <div class="day-headers">
+                                            <div class="day header">П</div>
+                                            <div class="day header">В</div>
+                                            <div class="day header">С</div>
+                                            <div class="day header">Ч</div>
+                                            <div class="day header">П</div>
+                                            <div class="day header">С</div>
+                                            <div class="day header">В</div>
+                                        </div>
+                                        <div class="days" data-group="days">
+
+                                        </div>
+                                    </div>
+                                    <!-- Responsive calendar - END -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 u-details">
+                                    <h2 class="color-orange">Валерий</h2>
+                                    <div class="text-muted">Графский переулок, дом 14, корпус 2, 4 этаж</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <a href="#" class="stage-img"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div><!-- end Projects slider block -->
