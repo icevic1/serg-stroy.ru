@@ -1,4 +1,22 @@
 <footer>
+    <div class="footer2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 platform-links">
+                    <a class="footer-logo" href="http://www.lavalite.org/"><img src="{{ asset('img/logo/logo.png') }}" height="28" alt="Lavalite"></a>
+                </div>
+                <div class="col-sm-7 social">
+                    <ul class="footer-links list-unstyled text-right">
+                        <li class="ion-iphone"> +7 (926) 923-19-45</li>
+                        <li class="ion-email"> <a href="mailto:info@SERG-STROY.ru"> info@SERG-STROY.ru</a></li>
+                        <li class="copyright">&copy; SergStroy все права защищены.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer>
     <div class="footer">
         <div class="container">
             <div class="row">

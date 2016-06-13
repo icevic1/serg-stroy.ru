@@ -476,5 +476,3 @@
             </div>
         </div>
     </div><!-- end Projects slider block -->
-
-
