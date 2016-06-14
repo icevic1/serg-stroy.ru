@@ -721,7 +721,7 @@ ul.nav.nav-login > li.collapse-btn button {
   font-size: 18px;
 }
 .stages-holder .stages-content .stage-img {
-  min-width: 660px;
+  min-width: inherit;
   height: 345px;
   background-image: url("/img/calendar_def.jpg");
   background-repeat: no-repeat;
@@ -743,11 +743,11 @@ ul.nav.nav-login > li.collapse-btn button {
   margin-top: 15px;
   font-size: 25px;
 }
-.footer2 .footer-links > li.ion-iphone {
+.footer2 .footer-links > .ion-iphone {
   color: #063551;
 }
-.footer2 .footer-links > li:not(.ion-iphone),
-.footer2 .footer-links li a {
+.footer2 .footer-links > div:not(.ion-iphone),
+.footer2 .footer-links > div a {
   color: #FFFFFF;
 }
 .footer {
@@ -896,6 +896,7 @@ ul.nav.nav-login > li.collapse-btn button {
   }
   .toggle-menu-wrapper img {
     display: inline;
+    height: 100%;
   }
   .nav.navbar-nav.navbar-right.social-buttons li.evaluate a {
     display: inline-block;
@@ -958,6 +959,9 @@ ul.nav.nav-login > li.collapse-btn button {
   }
   .navbar.navbar-default.navbar-custom-menu a.navbar-brand {
     margin: 0;
+  }
+  .navbar.navbar-default.navbar-custom-menu a.navbar-brand img.img-responsive {
+    height: 100%;
   }
   .navbar-custom-menu .navbar-header a.navbar-brand {
     margin-right: 0;
@@ -1022,7 +1026,28 @@ ul.nav.nav-login > li.collapse-btn button {
     min-width: 100%;
     background-position: 0 0;
     background-size: 100% auto;
+    height: 200px;
+  }
+  .stages-holder .stages-content > div > .container > .row > [class*='col-'] {
+    padding: 0;
+  }
+  footer .footer2 {
     height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  footer .footer2 > .container > .row > [class*='col-'] {
+    width: 100%;
+  }
+  footer .footer2 .footer-links {
+    font-size: 18px;
+  }
+  footer .footer-logo {
+    text-align: center;
+  }
+  footer .footer-logo > img {
+    height: auto;
+    width: 100%;
   }
 }
 /* Landscape iPhone*/
@@ -1047,5 +1072,8 @@ ul.nav.nav-login > li.collapse-btn button {
     clear: both;
     display: block;
     content: '';
+  }
+  footer .footer2 .footer-links {
+    font-size: 20px;
   }
 }

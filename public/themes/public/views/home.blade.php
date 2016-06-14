@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="navbar-header">
                             <div class="row no-gutter">
-                                <div class="col-xs-9 brand-wrapper"><a class="navbar-brand block" href="{{trans_url('/')}}"><img src="{{asset('img/logo/logo.png')}}" alt="Lavalite" class="img-responsive" /></a></div>
+                                <div class="col-xs-9 col-sm-12 brand-wrapper"><a class="navbar-brand block" href="{{trans_url('/')}}"><img src="{{asset('img/logo/logo.png')}}" alt="Lavalite" class="img-responsive" /></a></div>
                                 <div class="col-xs-3 visible-xs toggle-menu-wrapper">
                                     <a href="#"><img src="{{asset('img/key-icon.jpg')}}" class="img-responsive" /></a>
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"><img src="{{asset('img/toggle-menu-icon.jpg')}}" class="img-responsive" /></button>
@@ -49,7 +49,7 @@
             </div>
         </div>{{--end overlay--}}
     </div> {{--end head block--}}
-
+    {{-- we can use class img-circle and width&height on img instead of my scripts--}}
     <div class="container">
         <div class="row circles-holder">
             <div class="col-md-4 text-center">
@@ -469,7 +469,7 @@
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <a href="#" class="stage-img"></a>
+                            <a href="#" class="stage-img center-block"></a>
                         </div>
                     </div>
                 </div>

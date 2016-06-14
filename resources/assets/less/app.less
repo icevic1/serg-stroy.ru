@@ -567,7 +567,7 @@ ul.nav.nav-login {
     }
 
     .stage-img {
-      min-width: 660px;
+      min-width: inherit;
       height: 345px;
       background-image: url("/img/calendar_def.jpg");
       background-repeat: no-repeat;
@@ -584,16 +584,19 @@ ul.nav.nav-login {
   background-color: #78adcb;
   height: 140px;
 
-  .footer-logo img {
-    height: 140px;
+  .footer-logo {
+    img {
+      height: 140px;
+    }
   }
   .footer-links {
     margin-top: 15px;
     font-size: 25px;
-    > li.ion-iphone {
+    > .ion-iphone {
       color: @color-blue-text;
     }
-    > li:not(.ion-iphone), li a {
+    > div:not(.ion-iphone),
+    > div a {
       color: #FFFFFF;
     }
   }
@@ -784,6 +787,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
     img {
       display: inline;
+      height: 100%;
     }
   } //end togle menu wrapper
 
@@ -870,6 +874,9 @@ and (orientation: portrait) {
 
   .navbar.navbar-default.navbar-custom-menu a.navbar-brand {
     margin: 0;
+    img.img-responsive {
+      height: 100%;
+    }
   }
 
   .navbar-custom-menu {
@@ -946,12 +953,42 @@ and (orientation: portrait) {
     font-size: 35px;
   }
 
-  .stages-holder .stages-content .stage-img {
-    min-width: 100%;
-    background-position: 0 0;
-    background-size: 100% auto;
-    height: auto;
+  .stages-holder {
+    .stages-content {
+      .stage-img {
+        min-width: 100%;
+        background-position: 0 0;
+        background-size: 100% auto;
+        height: 200px;
+      }
+      > div > .container > .row > [class*='col-'] {
+        padding: 0;
+      }
+    }
   }
+
+  footer {
+    .footer2 {
+      height: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      > .container > .row > [class*='col-'] {
+        width: 100%;
+      }
+      .footer-links {
+        font-size: 18px;
+      }
+    }
+    .footer-logo {
+       text-align: center;
+      > img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
 
 } // end Portrait on iPhones
 
@@ -987,5 +1024,12 @@ and (orientation: landscape) {
     }
   }
 
+  footer {
+    .footer2 {
+      .footer-links {
+        font-size: 20px;
+      }
+    }
+  }
 
 }
