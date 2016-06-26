@@ -23,7 +23,7 @@
                             <div class="row no-gutter">
                                 <div class="col-xs-9 col-sm-12 brand-wrapper"><a class="navbar-brand block" href="{{trans_url('/')}}"><img src="{{asset('img/logo/logo.png')}}" alt="Lavalite" class="img-responsive" /></a></div>
                                 <div class="col-xs-3 visible-xs toggle-menu-wrapper">
-                                    <a href="#"><img src="{{asset('img/key-icon.jpg')}}" class="img-responsive" /></a>
+                                    <a href="#client_login"><img src="{{asset('img/key-icon.jpg')}}" class="img-responsive" /></a>
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"><img src="{{asset('img/toggle-menu-icon.jpg')}}" class="img-responsive" /></button>
                                 </div>
 
@@ -31,7 +31,7 @@
                         </div>
                         <div class="menu-wrapper">
                             <ul class="nav navbar-nav navbar-right nav-login hidden-xs">
-                                <li class="login-btn"><a href="#"><img src="{{asset('img/key-icon.jpg')}}" class="img-responsive" /></a></li>
+                                <li class="login-btn"><a href="#client_login" onclick=""><img src="{{asset('img/key-icon.jpg')}}" class="img-responsive" /></a></li>
                                 <li class="collapse-btn"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"><img src="{{asset('img/toggle-menu-icon.jpg')}}" class="img-responsive" /></button></li>
                             </ul>
                             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -398,7 +398,7 @@
         </div>
     </div><!-- end Projects slider block -->
     <!-- Question block -->
-    <div class="container-fluid stages-holder">
+    <div id="client_login" class="container-fluid stages-holder">
         <div class="row">
             <div class="col-sm-12 title text-center">
                 <h1>Этапы работ</h1>
@@ -408,29 +408,37 @@
             <div class="col-md-12">
                 <div class="container">
                     <div class="row">
-                        <form class="form-horizontal">
+                        {!!Form::vertical_open()->id('client_login_form')
+                                ->method('POST')
+                                ->action('login')
+                                ->class('form-horizontal')!!}
                             <div class="col-sm-8">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input type="text" name="u_name" class="form-control" id="u_name" placeholder="Имя клиента" />
+                                        {!! Form::email('email','')-> placeholder(trans('user.user.placeholder.client_email'))!!}
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="u_phone" class="form-control" id="u_phone" placeholder="Номер телефона">
+                                        {!! Form::password('password','')->placeholder(trans('user.user.placeholder.client_password'))!!}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-4 q-action">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn app-btn btn-orange btn-block">Войти</button>
+                                        @if(Auth::check())
+                                            <a href="{{ trans_url('logout') }}" class="logout btn app-btn btn-orange btn-block">{!! trans('user.user.label.logout')!!}</a>
+                                        @else
+                                            {!! Form::submit(trans('user.user.label.login'), null, array('class' => 'btn app-btn btn-orange btn-block'))!!}
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
+        @if(Auth::check())
         <div class="row stages-content">
             <div class="col-md-12">
                 <div class="container">
@@ -475,4 +483,5 @@
                 </div>
             </div>
         </div>
+        @endif
     </div><!-- end Projects slider block -->

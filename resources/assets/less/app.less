@@ -541,15 +541,28 @@ ul.nav.nav-login {
     margin-top: 20px;
     margin-bottom: 20px;
 
-    input[type="text"], textarea {
-      border-radius: 0;
-      border: 1px solid @color-gray-dark;
-      margin-bottom: 20px;
+    .form-group {
+      margin-left: 0;
+      margin-right: 0;
+      &:not(.has-error) {
+        input[type="text"], input[type="email"], input[type="password"], textarea {
+          border-radius: 0;
+          border: 1px solid @color-gray-dark;
+          margin-bottom: 20px;
+        }
+
+        input {
+          height: 50px;
+        }
+      }
+      &.has-error {
+        input {
+          border-radius: 0;
+          height: 50px;
+        }
+      }
     }
 
-    input[type="text"] {
-      height: 50px;
-    }
   }
 
   .stages-content {
