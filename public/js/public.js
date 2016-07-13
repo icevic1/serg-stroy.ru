@@ -1,5 +1,56 @@
 $(function () {
 
+
+    $('#form-guest-question').on('submit',function(e){
+        //$.ajaxSetup({
+        //    header:$('meta[name="_token"]').attr('content')
+        //});
+        e.preventDefault(e);
+
+        $.ajax({
+
+            type: "POST",
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            dataType: 'json',
+            beforeSend: function(request) {
+                return request.setRequestHeader('X-CSRF-Token', $("meta[name='token']").attr('content'));
+            },
+            success: function(data){
+                $('#form-guest-question')[0].reset();
+                $('#form-guest-question .error-holder .alert strong').toggleText("Ошибка!", "Спосибо!", true);
+                $('#form-guest-question .error-holder .alert').show('fade in').toggleClass("alert-danger", false).toggleClass("alert-success", true);
+                $('#form-guest-question ul.errors-list').empty().append($('<li>').text(data.responseText));
+
+                window.setTimeout(function() {
+                    $("#form-guest-question .error-holder .alert")/*.fadeTo(500, 0)*/.slideUp(500, function(){
+                        $(this).hide();
+                    });
+                }, 5000);
+            },
+            error: function(data){
+                $('#form-guest-question .error-holder .alert strong').toggleText("Спосибо!", "Ошибка!", true);
+                $('#form-guest-question .error-holder .alert').show().toggleClass("alert-danger", true).toggleClass("alert-success", false);
+                $('#form-guest-question ul.errors-list').empty();
+
+                $.each(data.responseJSON, function(a, b) {
+                    $.each(this, function(k, v) {
+                        $('#form-guest-question ul.errors-list').append($('<li>').text(v));
+                    });
+                });
+
+            }
+        })
+    });
+
+    $("[data-hide]").on("click", function(e){
+        e.preventDefault();
+        $(this).closest("." + $(this).attr("data-hide")).slideUp(500, function(){
+            $(this).hide();
+        });
+    });
+
+
     $(".responsive-calendar").responsiveCalendar({
         //time: '2013-05',
         allRows: false,
@@ -12,7 +63,7 @@ $(function () {
             "2016-06-12": {}}
     });
 
-    ymaps.ready(init);
+    /*ymaps.ready(init);
     var myMap,
         myPlacemark;
 
@@ -28,7 +79,7 @@ $(function () {
         });
 
         myMap.geoObjects.add(myPlacemark);
-    }
+    }*/
     /*---- end map block -------*/
 
     $('.q-form input[type="text"]').focus(function() {
@@ -126,6 +177,21 @@ $(function () {
         });
     });
 });
+$.fn.extend({
+    toggleText:function(a, b, strict){
+        var text = this.html();
+        if (strict) {
+            this.html(text.replace(a, b));
+        } else {
+            if (this.html() == a) {
+                this.html(b)
+            }
+            else {
+                this.html(a)
+            }
+        }
+    }
+});
 
 $( document ).ajaxComplete(function() {
     $("form[id$='-show'] :input").prop("disabled", true);
@@ -170,6 +236,7 @@ $( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
 
 $( document ).ajaxSuccess(function( event, xhr, settings ) {
     app.message(xhr);
+    //console.log('success');
 });
 /*
 function sendFile(file, url, editor) {

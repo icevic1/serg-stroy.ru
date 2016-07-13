@@ -27,4 +27,18 @@ class PublicController extends Controller
 
         return $this->theme->of('public::home', compact('page'))->render();
     }
+
+    /**
+     * Display homepage.
+     *
+     * @return response
+     */
+    public function guest_question()
+    {
+//todo de facut insertul in DB
+        return response()->json(['responseText' => 'Success!'], 200);
+        $this->theme->layout('home');
+
+        return 'xxxx';
+    }
 }

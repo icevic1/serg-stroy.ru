@@ -28,12 +28,17 @@
 Route::group(['middleware' => 'web'], function () {
     // Home page for the website.
     Route::get('/', 'PublicController@home');
+//    Route::post('/guest-question', 'PublicController@guest_question');
+    Route::get('/leave-question', 'ClientQuestionController@stores');
+    Route::post('/leave-question', 'ClientQuestionController@store');
+
 
     Route::get('/register/{role?}', 'Auth\AuthController@showRegistrationForm');
     Route::auth();
     Route::get('login/{provider}', 'Auth\AuthController@redirectToProvider');
     Route::get('login/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
     Route::get('/home', 'UserController@home');
+
 
     Route::get(trans_setlocale().'/admin', 'AdminController@home');
     Route::get(trans_setlocale().'admin/profile', 'AdminController@profile');

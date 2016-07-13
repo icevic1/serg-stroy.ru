@@ -14,6 +14,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         {!! Theme::asset()->scripts() !!}
         <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script src="{{ asset('js/theme.min.js') }}"></script>
     </head>
 
 <body class="home">

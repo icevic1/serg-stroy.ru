@@ -229,6 +229,7 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Input'     => Illuminate\Support\Facades\Input::class,
 
         'AuthenticateUser'     => App\AuthenticateUser::class,
         'Socialite'            => Laravel\Socialite\Facades\Socialite::class,
@@ -247,6 +248,7 @@ return [
         'Task'      => Lavalite\Task\Facades\Task::class,
         'Calendar'  => Lavalite\Calendar\Facades\Calendar::class,
         'Message'   => Lavalite\Message\Facades\Message::class,
+
     ],
 
 ];
