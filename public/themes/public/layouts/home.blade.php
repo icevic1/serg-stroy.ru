@@ -18,8 +18,7 @@
     </head>
 
 <body class="home">
-
-
+    {!! Theme::partial('header') !!}
     {!! Theme::content() !!}
     {!! Theme::partial('footer') !!}
     <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>

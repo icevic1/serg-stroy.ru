@@ -28,7 +28,7 @@
 Route::group(['middleware' => 'web'], function () {
     // Home page for the website.
     Route::get('/', 'PublicController@home');
-//    Route::post('/guest-question', 'PublicController@guest_question');
+    Route::get('/reviews', 'ReviewsController@index');
     Route::get('/leave-question', 'ClientQuestionController@stores');
     Route::post('/leave-question', 'ClientQuestionController@store');
 
