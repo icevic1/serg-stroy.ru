@@ -37,9 +37,9 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
                                 <ul class="nav navbar-nav">
                                     <li><a href="">О компании</a></li>
-                                    <li><a href="">Цены</a></li>
+                                    <li><a href="#priceBlock">Цены</a></li>
                                     <li><a href="">Фотогалерея</a></li>
-                                    <li><a href="">Отзывы</a></li>
+                                    <li><a href="#clientReviews">Отзывы</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                         <div class="content question-block text-center">
                             <h1 class="bonuses">+ Бонус</h1>
                             <p>2 выезда дизайнера во время работы!</p>
-                            <a href="" class="app-btn btn-orange">Задать вопрос</a>
+                            <a href="#clientQuestion" class="app-btn btn-orange">Задать вопрос</a>
                         </div>
                     </div>
                 </div><!--
@@ -125,7 +125,7 @@
         </div>
     </div>
     <!-- Projects slider block -->
-    <div class="container-fluid">
+    <div id="projectsCarusel" class="container-fluid">
         <div class="row projects-holder">
             <div class="col-sm-12 title text-center">
                 <h1>Проекты</h1>
@@ -148,14 +148,13 @@
                     </div>
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url('{{asset('img/project_1.png')}}"><img src="{{asset('img/project_1.png')}}" /></div>
+                        <div class="fill" style="background-image:url('{{asset('img/project_1.png')}}')"><img src="{{asset('img/project_1.png')}}" /></div>
                     </div>
                     <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
                         <div class="fill" style="background-image:url('{{asset('img/project_1.png')}}');"><img src="{{asset('img/project_1.png')}}" /></div>
                     </div>
                 </div>
-
                 <!-- Controls -->
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                     <span class="ionicons ion-ios-arrow-back"></span>
@@ -163,16 +162,12 @@
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">
                     <span class="ionicons ion-ios-arrow-forward"></span>
                 </a>
-
             </div><!-- end of carusel-->
-
-
-
         </div>
     </div><!-- end Projects slider block -->
 
     <!-- Prices block -->
-    <div class="container-fluid">
+    <div id="priceBlock" class="container-fluid">
         <div class="row preices-holder">
             <div class="col-sm-12 title text-center">
                 <h1>Цэны</h1>
@@ -231,7 +226,7 @@
         </div>
     </div><!-- end Projects prices block -->
     <!-- Projects feedback block -->
-    <div class="container-fluid">
+    <div id="clientReviews" class="container-fluid">
         <div class="row reviews-holder">
             <div class="col-sm-12 title text-center">
                 <h1 class="color-orange">Отзывы</h1>
@@ -339,7 +334,7 @@
         </div>
     </div><!-- end Projects slider block -->
     <!-- Question block -->
-    <div class="container-fluid question-holder">
+    <div id="clientQuestion" class="container-fluid question-holder">
         <div class="row">
             <div class="col-sm-12 title text-center">
                 <h1>Вопросы</h1>
