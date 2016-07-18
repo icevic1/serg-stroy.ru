@@ -278,7 +278,7 @@
                 </a>
             </div><!-- end of carusel-->
             <div class="container text-right">
-                <a href="" class="app-btn btn-orange">Отзывы клиентов</a>
+                <a href="{!! URL::to('reviews/#video') !!}" class="app-btn btn-orange">Отзывы клиентов</a>
             </div>
         </div>
     </div><!-- end Projects slider block -->

@@ -485,6 +485,41 @@ ul.nav.nav-login {
   }
 } //end reviews-holder-slider
 
+#client_reviews {
+  .review-form-holder {
+    overflow: hidden;
+
+    input[type="text"], textarea {
+      border-radius: 0;
+      border: 1px solid #cccccc;
+    }
+
+    input[type="text"] {
+      height: 50px;
+    }
+
+    input[type="file"] {
+      position:absolute;
+      z-index:2;
+      top:0;
+      left:0;
+      filter: alpha(opacity=0);
+      -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      opacity:0;
+      background-color:transparent;
+      color:transparent;
+    }
+
+  } //.review-form-holder
+
+  .list-holder {
+    .row.circles-holder {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+}
+
 /* Question block */
 .question-holder {
   .title h1 {
