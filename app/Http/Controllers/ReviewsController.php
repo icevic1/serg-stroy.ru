@@ -88,8 +88,8 @@ class ReviewsController extends Controller
             if($request->hasFile('image')) //Проверяем была ли передана картинка, ведь статья может быть и без картинки.
             {
                 $image = Input::file('image');
-                $filename  = time() . '.' . $image->getClientOriginalExtension();
-                $filename_thumb  = time() . 'x250_thumb.' . $image->getClientOriginalExtension();
+                $filename  = time() . '.' . strtolower($image->getClientOriginalExtension());
+                $filename_thumb  = time() . 'x250_thumb.' . strtolower($image->getClientOriginalExtension());
                 $path = public_path('images/' . $filename);
                 $path_thumb = public_path('images/' . $filename_thumb);
 
