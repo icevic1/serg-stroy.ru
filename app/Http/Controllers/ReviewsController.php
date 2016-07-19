@@ -14,6 +14,8 @@ use Input; //Illuminate\Support\Facades\Input
 use Intervention\Image\Facades\Image as Image;
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManager;
+use Lavalite\Page\Interfaces\PageRepositoryInterface;
+use Lavalite\Page\Models\Page;
 
 class ReviewsController extends Controller
 {
@@ -22,8 +24,9 @@ class ReviewsController extends Controller
      *
      * @return null
      */
-    public function __construct()
+    public function __construct(PageRepositoryInterface $page)
     {
+        $this->model = $page;
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 
@@ -34,9 +37,28 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        $this->theme->layout('home');
+//        $itemsList = Review::all()->where('published', 1);
+        $itemsList = Review::latest('created_at')->where('published', 1)->skip(0)->take(1)->get();
 
-        return $this->theme->of('public::reviews', compact('page'))->render();
+        $this->theme->layout('home');
+//        dd($itemsList);
+        return $this->theme->of('public::reviews', compact('itemsList'))->render();//->with($data)
+    }
+
+    /**
+     * Display homepage.
+     *
+     * @return response
+     */
+    public function getLatest()
+    {
+//        $itemsList = Review::all()->where('published', 1);
+//        $itemsList = Review::where('published', 1)->skip(0)->take(1)->get();
+        $itemsList = Review::latest('created_at')->where('published', 1)->paginate(20);
+
+        $this->theme->layout('home');
+//        dd($itemsList);
+        return $this->theme->of('public::reviews', compact('itemsList'))->render();//->with($data)
     }
 
     /**
