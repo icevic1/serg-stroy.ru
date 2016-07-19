@@ -677,6 +677,13 @@ ul.nav.nav-login > li.collapse-btn button {
   padding-bottom: 20px;
   padding-top: 20px;
 }
+#client_reviews .list-holder .row.circles-holder .circle-block .circle-inner {
+  background-size: 100% auto;
+  background: url("/img/avatar/avatar_man.jpg") no-repeat scroll center center;
+}
+#client_reviews .list-holder .row.circles-holder .circle-block .circle-inner img {
+  height: inherit;
+}
 /* Question block */
 .question-holder .title h1 {
   color: #ff7e00;
