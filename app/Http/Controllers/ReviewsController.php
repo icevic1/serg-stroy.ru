@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Review;
 //use Request;
+use App\ClientQuestion;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
@@ -13,9 +14,6 @@ use Input; //Illuminate\Support\Facades\Input
 use Intervention\Image\Facades\Image as Image;
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManager;
-use Lavalite\Page\Interfaces\PageRepositoryInterface;
-//use Lavalite\Page\Models\Page;
-use \View;
 
 class ReviewsController extends Controller
 {
@@ -24,9 +22,8 @@ class ReviewsController extends Controller
      *
      * @return null
      */
-    public function __construct(PageRepositoryInterface $page)
+    public function __construct()
     {
-        $this->model = $page;
         $this->setupTheme(config('theme.themes.public.theme'), config('theme.themes.public.layout'));
     }
 
@@ -37,29 +34,9 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-//        $itemsList = Review::all()->where('published', 1);
-//        $itemsList = Review::latest('created_at')->where('published', 1)->skip(0)->take(1)->get();
-        $itemsList = Review::latest('created_at')->where('published', 1)->paginate(20);
-        $titlePage = "Отзывы";
         $this->theme->layout('home');
 
-        View::share('titlePage', $titlePage); //pass data to the layout
-        return $this->theme->of('public::reviews', compact('itemsList', 'titlePage'))->render();//->with($data)
-    }
-
-    /**
-     * Display published users reviews.
-     *
-     * @return response
-     */
-    public function getLatest()
-    {
-//        $itemsList = Review::all()->where('published', 1);
-//        $itemsList = Review::where('published', 1)->skip(0)->take(1)->get();
-        $itemsList = Review::latest('created_at')->where('published', 1)->paginate(20);
-
-        $this->theme->layout('home');
-        return $this->theme->of('public::reviews', compact('itemsList'))->render();//->with($data)
+        return $this->theme->of('public::reviews', compact('page'))->render();
     }
 
     /**
@@ -145,7 +122,7 @@ class ReviewsController extends Controller
                 Review::create($all); // если картинка не передана, то сохраняем запрос, как есть.
             }
 
-            return back()->with('message_success', 'Ваше мнение было успешно отпрвлено, и скоро появится на сайте как проейдет модерацию!');//            return Redirect::to('/');
+            return back()->with('message_success', 'Ваше мнение было добавлена успешно!');//            return Redirect::to('/');
         }
     }
 
