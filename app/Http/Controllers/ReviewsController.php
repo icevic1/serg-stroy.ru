@@ -15,6 +15,7 @@ use Intervention\Image\Facades\Image as Image;
 use Intervention\Image\ImageManager;
 use Lavalite\Page\Interfaces\PageRepositoryInterface;
 //use Lavalite\Page\Models\Page;
+use \View;
 
 class ReviewsController extends Controller
 {
@@ -41,12 +42,13 @@ class ReviewsController extends Controller
         $itemsList = Review::latest('created_at')->where('published', 1)->paginate(20);
         $titlePage = "Отзывы";
         $this->theme->layout('home');
-//        dd($itemsList);
-        return $this->theme->of('public::reviews', compact('itemsList'))->render();//->with($data)
+
+        View::share('titlePage', $titlePage); //pass data to the layout
+        return $this->theme->of('public::reviews', compact('itemsList', 'titlePage'))->render();//->with($data)
     }
 
     /**
-     * Display homepage.
+     * Display published users reviews.
      *
      * @return response
      */
@@ -57,7 +59,6 @@ class ReviewsController extends Controller
         $itemsList = Review::latest('created_at')->where('published', 1)->paginate(20);
 
         $this->theme->layout('home');
-//        dd($itemsList);
         return $this->theme->of('public::reviews', compact('itemsList'))->render();//->with($data)
     }
 

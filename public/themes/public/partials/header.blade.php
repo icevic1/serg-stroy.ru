@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </nav>
-            @if($titlePage)
+            @if(isset($titlePage) && $titlePage)
             <div class="page-title">
                 <div class="container">
                     <div class="title-text">{{$titlePage}}</div>
