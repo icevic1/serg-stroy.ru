@@ -83,7 +83,7 @@
             </div>{{-- .review-form-holder--}}
             <div class="clearfix"></div>
             <div class="list-holder">
-                @if($itemsList)
+                @if(isset($itemsList) && $itemsList)
                 @foreach ($itemsList as $item)
                 <div class="item">
                     <!-- Set the first background image using inline CSS below. -->

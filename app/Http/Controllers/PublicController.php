@@ -25,6 +25,15 @@ class PublicController extends Controller
     {
         $this->theme->layout('home');
 
-        return $this->theme->of('public::home', compact('page'))->render();
+        $reviewItems = \App\Review::all()
+            ->where('published', 1)
+            ->where('on_home', 1)
+            ->where('is_video', 0);
+        $reviewVideoItems = \App\Review::all()
+            ->where('published', 1)
+            ->where('on_home', 1)
+            ->where('is_video', 1);
+//dd($reviewItems, $reviewVideoItems);
+        return $this->theme->of('public::home', compact('reviewItems','reviewVideoItems'))->render();
     }
 }
