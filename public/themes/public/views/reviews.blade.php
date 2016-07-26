@@ -1,9 +1,8 @@
-<!-- Projects feedback block -->
-
+<!-- Projects reviews block -->
 <div id="client_reviews" class="container-fluid">
     <div class="row reviews-holder-slider">
         <!-- Wrapper for Slides -->
-        <div class="container">
+        <div class="container" id="clientReviews">
             <div class="review-form-holder well">
                 @if(Session::has('message_success'))
                     <div class="alert alert-success">
@@ -84,6 +83,7 @@
             </div>{{-- .review-form-holder--}}
             <div class="clearfix"></div>
             <div class="list-holder">
+                @if($itemsList)
                 @foreach ($itemsList as $item)
                 <div class="item">
                     <!-- Set the first background image using inline CSS below. -->
@@ -104,7 +104,15 @@
                     </div>
                 </div>
                 @endforeach
+                @endif
             </div>
-        </div>
+            <div class="text-center">
+                {{$itemsList->render()}}
+            </div>
+        </div><!-- .container -->
     </div>
 </div><!-- end reviews slider block -->
+<!-- Client question block -->
+{!! Theme::partial('client_questions') !!}
+<!-- Find us on map block-->
+{!! Theme::partial('on_map') !!}

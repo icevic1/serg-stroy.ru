@@ -266,6 +266,20 @@ body.home .overlay .main-overlay {
   text-align: center;
   display: inline-block;
 }
+body.home .overlay .main-overlay .page-title {
+  margin-top: 10%;
+  height: 130px;
+  width: 100%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=);
+  background-repeat: repeat-y;
+  background-size: 50% auto;
+}
+body.home .overlay .main-overlay .page-title .title-text {
+  font-size: 60px;
+  color: #1e76a9;
+  line-height: 130px;
+  text-align: left;
+}
 .color-orange {
   color: #ff7e00;
 }
@@ -439,6 +453,7 @@ h1.contact-phone {
 .navbar.navbar-default.navbar-custom-menu a.navbar-brand {
   height: auto;
   padding: 0;
+  margin-left: 0;
   margin-right: 10px;
 }
 .menu-wrapper {
@@ -1029,6 +1044,16 @@ ul.nav.nav-login > li.collapse-btn button {
   ul.nav.nav-login > li > a,
   ul.nav.nav-login > li > button {
     background: none;
+  }
+  body.home .overlay .main-overlay .page-title {
+    height: 75px;
+    width: 100%;
+    background-size: 100% auto;
+  }
+  body.home .overlay .main-overlay .page-title .title-text {
+    font-size: 60px;
+    line-height: 75px;
+    text-align: center;
   }
   .price-list {
     text-align: center;
