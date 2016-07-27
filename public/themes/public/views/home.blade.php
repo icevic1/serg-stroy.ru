@@ -187,8 +187,8 @@
                 <div class="container">
                     <div class="carousel-inner">
                         @if(isset($reviewItems) && $reviewItems)
-                            @foreach ($reviewItems as $index=>$item)
-                            <div class="item{{$index==0?' active':''}}">
+                            @foreach ($reviewItems as $item)
+                            <div class="item{{($reviewItems->first() == $item)?' active':''}}">
                                 <!-- Set the first background image using inline CSS below. -->
                                 <div class="row circles-holder">
                                     <div class="col-sm-3 col-sm-offset-1 review-img-block">
@@ -234,33 +234,27 @@
             <div id="myCarousel3" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for Slides -->
                 <div class="container">
-                    <div class="carousel-inner">
-                        <div class="item active">
+                    <div class="carousel-inner">{{--<pre>{{var_dump($reviewVideoItems)}}</pre>--}}
+                        @if(isset($reviewVideoItems) && $reviewVideoItems)
+                        @foreach ($reviewVideoItems as $item)
+                        <div class="item{{($reviewVideoItems->first() == $item)?' active':''}}">
                             <div class="row circles-holder">
                                 <div class="col-sm-3 col-sm-offset-1 review-img-block">
                                     <div class="circle-block">
-                                        <div class="circle-inner img-vreview"></div>
+                                        <div class="circle-inner img-vreview{{$item->video? ' is_video':''}}">
+                                            @if($item->image)
+                                                <img src="{{$item->image}}" />
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-7 review-content-block">
-                                    <h1>Уолтер Брюс Уиллис</h1>
+                                    <h1>{{$item->name}}</h1>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <!-- Set the first background image using inline CSS below. -->
-                            <div class="row circles-holder">
-                                <div class="col-sm-3 col-sm-offset-1 review-img-block">
-                                    <div class="circle-block">
-                                        <div class="circle-inner img-review"></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-7 review-content-block">
-                                    <h1>Юля Студеникина</h1>
-                                </div>
-                            </div>
-                            {{--<div class="carousel-caption"><h2>Caption 1</h2></div>--}}
-                        </div>
+                        @endforeach
+                        @endif
                     </div><!-- end carousel-inner -->
                 </div><!-- end container -->
                 <!-- Controls -->

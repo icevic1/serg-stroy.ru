@@ -330,6 +330,27 @@ ul.nav.nav-login {
       background-size: 150%;
       height: inherit;
       width: inherit;
+
+      &.is_video:after {
+        background-image: url("/img/youtube_play_icon_wite.png");
+        background-repeat: no-repeat;
+        background-size: 80px auto;
+        background-position: center 0;
+        content: "";
+        display: block;
+        height: 75px;
+        width: inherit;
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+      }
+      &.is_video:hover:after {
+        background-image: url("/img/youtube_play_icon_red.png");
+      }
+
+      img {
+        height: inherit;
+      }
     }
 
     .img-terms {background: url("/img/terms.png") no-repeat;}

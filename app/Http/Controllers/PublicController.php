@@ -33,7 +33,7 @@ class PublicController extends Controller
             ->where('published', 1)
             ->where('on_home', 1)
             ->where('is_video', 1);
-//dd($reviewItems, $reviewVideoItems);
+//dd(compact('reviewItems','reviewVideoItems'));
         return $this->theme->of('public::home', compact('reviewItems','reviewVideoItems'))->render();
     }
 }
