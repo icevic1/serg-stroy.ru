@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Page;
 
 class PublicController extends Controller
@@ -24,7 +24,7 @@ class PublicController extends Controller
     public function home()
     {
         $this->theme->layout('home');
-
+//dd(Auth::user()->address);
         $reviewItems = \App\Review::all()
             ->where('published', 1)
             ->where('on_home', 1)

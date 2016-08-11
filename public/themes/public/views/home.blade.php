@@ -293,10 +293,18 @@
                             <div class="col-sm-8">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        {!! Form::email('email','')-> placeholder(trans('user.user.placeholder.client_email'))!!}
+                                        @if(Auth::check())
+                                            {!! Form::email('email', '')->placeholder(trans('user.user.placeholder.client_email'))->value(Auth::user()->email)->disabled(Auth::check()) !!}
+                                        @else
+                                            {!! Form::email('email', '')->placeholder(trans('user.user.placeholder.client_email')) !!}
+                                        @endif
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Form::password('password','')->placeholder(trans('user.user.placeholder.client_password'))!!}
+                                        @if(Auth::check())
+                                            {!! Form::password('password','')->placeholder(trans('user.user.placeholder.client_password'))->disabled(Auth::check()) !!}
+                                        @else
+                                            {!! Form::password('password','')->placeholder(trans('user.user.placeholder.client_password'))!!}
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +312,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         @if(Auth::check())
-                                            <a href="{{ trans_url('logout') }}" class="logout btn app-btn btn-orange btn-block">{!! trans('user.user.label.logout')!!}</a>
+                                            <a href="{{ trans_url('logout') }}" class="logout btn app-btn btn-orange btn-block">{!! trans('user.user.label.logout')!!} <small class="ionicons ion-log-out"></small></a>
                                         @else
                                             {!! Form::submit(trans('user.user.label.login'), null, array('class' => 'btn app-btn btn-orange btn-block'))!!}
                                         @endif
@@ -349,8 +357,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 u-details">
-                                    <h2 class="color-orange">Валерий</h2>
-                                    <div class="text-muted">Графский переулок, дом 14, корпус 2, 4 этаж</div>
+                                    <h2 class="color-orange">{{ Auth::user()->name }}</h2>
+                                    <div class="text-muted">{{ Auth::user()->address }}</div>
                                 </div>
                             </div>
                         </div>
