@@ -16,11 +16,11 @@
 
 <body class="default">
 
-    {!! Theme::partial('header') !!}
+    {{--{!! Theme::partial('header') !!}--}}
     <div class="container">
     {!! Theme::content() !!}
     </div>
-    {!! Theme::partial('footer') !!}
+    {{--{!! Theme::partial('footer') !!}--}}
     <script src="{{ asset(elixir('js/vendor_public.js')) }}"></script>
     <script src="{{ asset('js/public.js') }}"></script>
     {!! Theme::asset()->container('footer')->scripts() !!}

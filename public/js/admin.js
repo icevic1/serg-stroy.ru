@@ -166,8 +166,8 @@ var app = {
             toastr.error('Please enter valid information.', 'Error');
             return false;
         }
+        var formData = new FormData($(forms).get(0));
 
-        var formData = new FormData($(forms));
         params   = form.serializeArray();
 
         $.each(params, function(i, val) {
@@ -204,7 +204,7 @@ var app = {
             return false;
         }
 
-        var formData = new FormData($(forms));
+        var formData = new FormData($(forms).get(0));
         params   = form.serializeArray();
 
         $.each(params, function(i, val) {

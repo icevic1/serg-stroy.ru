@@ -51,17 +51,19 @@ $(function () {
     });
 
 
-    $(".responsive-calendar").responsiveCalendar({
-        //time: '2013-05',
-        allRows: false,
-        translateMonths: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+    if ($(".responsive-calendar").length > 0) {
+        $(".responsive-calendar").responsiveCalendar({
+            //time: '2013-05',
+            allRows: false,
+            translateMonths: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
 
-        events: {
-            "2016-04-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
-            "2016-04-26": {"number": 1, "url": "http://w3widgets.com"},
-            "2016-05-03":{"number": 1},
-            "2016-06-12": {}}
-    });
+            events: {
+                "2016-04-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
+                "2016-04-26": {"number": 1, "url": "http://w3widgets.com"},
+                "2016-05-03":{"number": 1},
+                "2016-06-12": {}}
+        });
+    }
 
     /*ymaps.ready(init);
     var myMap,

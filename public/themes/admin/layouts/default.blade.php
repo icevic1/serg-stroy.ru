@@ -10,6 +10,8 @@
 <link href="{{ asset(elixir('css/vendor_admin.css')) }}" rel="stylesheet">
 {!! Theme::asset()->styles() !!}
 {!! Theme::asset()->scripts() !!}
+        {{--<script src="/js/jquery.timeago.js"></script>--}}
+
     </head>
     <body class="sidebar-mini skin-red">
         <div class="wrapper">

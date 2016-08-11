@@ -55,6 +55,7 @@ return [
             $theme->asset()->container('footer')->add('scripts', 'js/admin.js');
             $theme->asset()->container('footer')->usePath()->add('theme', 'js/theme.min.js');
             $theme->asset()->container('footer')->add('icheck', 'packages/icheck/js/icheck.min.js');
+            $theme->asset()->container('footer')->add('icheck', 'packages/jquery-timeago/jquery.timeago.js');
         },
 
         // Listen on event before render a layout,
