@@ -1,0 +1,20 @@
+{
+    "name": "lavalite/task",
+    "description": "Task management package for Lavalite framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lava Lite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lavalite\\Task\\": "src/Lavalite/Task"
+        }
+    },
+    "minimum-stability": "dev"
+}
