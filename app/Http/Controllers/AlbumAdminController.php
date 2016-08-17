@@ -27,7 +27,7 @@ class AlbumAdminController extends AdminController
 
 //        $this->model = $page;
         $this->model = $album;
-        dd("AlbumAdminController", $album);
+//        dd("AlbumAdminController", $album);
         parent::__construct();
     }
 
@@ -38,16 +38,16 @@ class AlbumAdminController extends AdminController
      */
     public function index(AlbumAdminRequest $request)
     {
-        dd('index');
+//        dd('index');
 
-        $pages  = $this->model->setPresenter('\\Lavalite\\Page\\Repositories\\Presenter\\PageListPresenter')->paginate(NULL, ['*']);
-        $this   ->theme->prependTitle(trans('page::page.names').' :: ');
-        $view   = $this->theme->of('page::admin.album.index')->render();
+//        $pages  = $this->model->setPresenter('\\Lavalite\\Page\\Repositories\\Presenter\\PageListPresenter')->paginate(NULL, ['*']);
+        $this->theme->prependTitle('Фото Галерея :: ');
+        $view   = $this->theme->of('admin::album.index')->render();
 
         $this->responseCode = 200;
         $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Page']);
-        $this->responseData = $pages['data'];
-        $this->responseMeta = $pages['meta'];
+//        $this->responseData = $pages['data'];
+//        $this->responseMeta = $pages['meta'];
         $this->responseView = $view;
         $this->responseRedirect = '';
         return $this->respond($request);
