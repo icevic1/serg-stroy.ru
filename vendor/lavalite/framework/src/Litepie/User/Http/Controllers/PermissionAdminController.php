@@ -20,6 +20,7 @@ class PermissionAdminController extends AdminController
      */
     public function __construct(PermissionRepository $permission)
     {
+//        dd(\Request::route()->getName());
         $this->model = $permission;
         parent::__construct();
     }
@@ -55,6 +56,7 @@ class PermissionAdminController extends AdminController
      */
     public function show(PermissionAdminRequest $request, Permission $permission)
     {
+//        dd($permission, $request);
         if (!$permission->exists) {
             $this->responseCode = 404;
             $this->responseMessage = trans('messages.success.notfound', ['Module' => 'Permission']);

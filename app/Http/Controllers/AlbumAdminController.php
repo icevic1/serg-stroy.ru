@@ -24,7 +24,8 @@ class AlbumAdminController extends AdminController
     public function __construct(AlbumRepositoryInterface $album)
 //    public function __construct(PageRepositoryInterface $page)
     {
-
+//        dd('show', $album   );
+//        dd(\Request::route()->getName());
 //        $this->model = $page;
         $this->model = $album;
 //        dd("AlbumAdminController", $album);
@@ -61,22 +62,22 @@ class AlbumAdminController extends AdminController
      *
      * @return Response
      */
-    public function show(PageAdminRequest $request, Page $page)
+    public function show(AlbumAdminRequest $request, Album $album) //, Album $album
     {
-        if (!$page->exists) {
+        if (!$album->exists) {
             $this->responseCode = 404;
-            $this->responseMessage = trans('messages.success.notfound', ['Module' => 'Page']);
-            $this->responseData = $page;
-            $this->responseView = view('page::admin.page.new');
-            return $this -> respond($request);
+            $this->responseMessage = trans('messages.success.notfound', ['Module' => 'Album']);
+            $this->responseView = view('admin::album.new');//Album::album.new
+
+            return $this->respond($request);
         }
 
-        Form::populate($page);
+        Form::populate($album);
         $this->responseCode = 200;
-        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Page']);
-        $this->responseData = $page;
-        $this->responseView = view('page::admin.page.show', compact('page'));
-        return $this -> respond($request);
+        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Album']);
+        $this->responseView = view('album::album.show', compact('album'));
+
+        return $this->respond($request);
     }
 
     /**
@@ -86,19 +87,18 @@ class AlbumAdminController extends AdminController
      *
      * @return Response
      */
-    public function create(PageAdminRequest $request)
+    public function create(AlbumAdminRequest $request)
     {
+        $album = $this->model->newInstance([]);
 
-        $page = $this->model->newInstance([]);
-
-        Form::populate($page);
+        Form::populate($album);
 
         $this->responseCode = 200;
-        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Page']);
-        $this->responseData = $page;
-        $this->responseView = view('page::admin.page.create', compact('page'));
-        return $this -> respond($request);
+        $this->responseMessage = "ceva text la raspuns"; //trans('messages.success.loaded', ['Module' => 'Permission']);
+        $this->responseData = $album;
+        $this->responseView = view('admin::album.create', compact('album'));
 
+        return $this->respond($request);
     }
 
     /**
@@ -108,25 +108,22 @@ class AlbumAdminController extends AdminController
      *
      * @return Response
      */
-    public function store(PageAdminRequest $request)
+    public function store(AlbumAdminRequest $request)
     {
         try {
             $attributes = $request->all();
-            $page = $this->model->create($attributes);
+            $album = $this->model->create($attributes);
 
             $this->responseCode = 201;
-            $this->responseMessage = trans('messages.success.created', ['Module' => 'Page']);
-            $this->responseData = $page;
-            $this->responseMeta = '';
-            $this->responseRedirect = trans_url('/admin/page/page/'.$page->getRouteKey());
-            $this->responseView = view('page::admin.page.create', compact('page'));
+            $this->responseMessage = trans('messages.success.created', ['Module' => 'Album']);
+            $this->responseRedirect = trans_url('/admin/album/album/'.$album->getRouteKey());
 
-            return $this -> respond($request);
-
+            return $this->respond($request);
         } catch (Exception $e) {
             $this->responseCode = 400;
             $this->responseMessage = $e->getMessage();
-            return $this -> respond($request);
+
+            return $this->respond($request);
         }
     }
 
@@ -138,15 +135,15 @@ class AlbumAdminController extends AdminController
      *
      * @return Response
      */
-    public function edit(PageAdminRequest $request, Page $page)
+    public function edit(AlbumAdminRequest $request, Album $album)
     {
-        Form::populate($page);
+        Form::populate($album);
         $this->responseCode = 200;
-        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Page']);
-        $this->responseData = $page;
-        $this->responseView = view('page::admin.page.edit', compact('page'));
+        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Permission']);
+        $this->responseData = $album;
+        $this->responseView = view('admin::album.edit', compact('album'));
 
-        return $this -> respond($request);
+        return $this->respond($request);
     }
 
     /**
@@ -157,28 +154,24 @@ class AlbumAdminController extends AdminController
      *
      * @return Response
      */
-    public function update(PageAdminRequest $request, Page $page)
+    public function update(AlbumAdminRequest $request, Album $album)
     {
         try {
-
             $attributes = $request->all();
 
-            $page->update($attributes);
+            $album->update($attributes);
 
             $this->responseCode = 204;
-            $this->responseMessage = trans('messages.success.updated', ['Module' => 'Page']);
-            $this->responseData = $page;
-            $this->responseRedirect = trans_url('/admin/page/page/'.$page->getRouteKey());
+            $this->responseMessage = trans('messages.success.updated', ['Module' => 'Album']);
+            $this->responseRedirect = trans_url('/admin/album/album/'.$album->getRouteKey());
 
-            return $this -> respond($request);
-
+            return $this->respond($request);
         } catch (Exception $e) {
-
             $this->responseCode = 400;
             $this->responseMessage = $e->getMessage();
-            $this->responseRedirect = trans_url('/admin/page/page/'.$page->getRouteKey());
+            $this->responseRedirect = trans_url('/admin/album/album/'.$album->getRouteKey());
 
-            return $this -> respond($request);
+            return $this->respond($request);
         }
     }
 
@@ -189,29 +182,22 @@ class AlbumAdminController extends AdminController
      *
      * @return Response
      */
-    public function destroy(PageAdminRequest $request, Page $page)
+    public function destroy(AlbumAdminRequest $request, Album $album)
     {
-
         try {
-
-            $t = $page->delete();
+            $t = $album->delete();
 
             $this->responseCode = 202;
-            $this->responseMessage = trans('messages.success.deleted', ['Module' => 'Page']);
-            $this->responseData = $page;
-            $this->responseMeta = '';
-            $this->responseRedirect = trans_url('/admin/page/page/0');
+            $this->responseMessage = trans('messages.success.deleted', ['Module' => 'Album']);
+            $this->responseRedirect = trans_url('/admin/album/album/0');
 
-            return $this -> respond($request);
-
+            return $this->respond($request);
         } catch (Exception $e) {
-
             $this->responseCode = 400;
             $this->responseMessage = $e->getMessage();
-            $this->responseRedirect = trans_url('/admin/page/page/'.$page->getRouteKey());
+            $this->responseRedirect = trans_url('/admin/album/album/'.$album->getRouteKey());
 
-            return $this -> respond($request);
-
+            return $this->respond($request);
         }
     }
 }

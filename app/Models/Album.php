@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Litepie\Database\Model;
-use Litepie\Database\Traits\Slugger;
-use Litepie\Filer\Traits\Filer;
-use Litepie\Hashids\Traits\Hashids;
-use Litepie\Trans\Traits\Trans;
+use Illuminate\Database\Eloquent\Model;
+//use Litepie\Database\Model;
+//use Litepie\Database\Traits\Slugger;
+//use Litepie\Filer\Traits\Filer;
+//use Litepie\Hashids\Traits\Hashids;
+//use Litepie\Trans\Traits\Trans;
 
 class Album extends Model
 {
-    use Filer, Hashids, Slugger, Trans;
+//    use Filer, Hashids, Slugger, Trans;
 
     /**
      * Configuartion for the model.

@@ -1,21 +1,21 @@
 @extends('admin::curd.index')
 @section('heading')
-<i class="fa fa-file-text-o"></i> {!! trans('user.permission.name') !!} <small> {!! trans('cms.manage') !!} {!! trans('user.permission.names') !!}</small>
+<i class="fa fa-file-text-o"></i> {!! trans('Фото Галерея') !!} <small> {!! trans('Альбомы') !!}</small>
 @stop
-suka lu mutu
+
 @section('title')
-{!! trans('user.permission.names') !!}
+{!! trans('Список фотоальбомов') !!}
 @stop
 
 @section('breadcrumb')
 <ol class="breadcrumb">
-    <li><a href="{!! URL::to('admin') !!}"><i class="fa fa-dashboard"></i> {!! trans('cms.home') !!} </a></li>
-    <li class="active">{!! trans('user.permission.names') !!}</li>
+    <li><a href="{!! URL::to('admin') !!}"><i class="fa fa-dashboard"></i> {!! trans('Главная') !!} </a></li>
+    <li class="active">{!! trans('Альбомы') !!}</li>
 </ol>
 @stop
 
 @section('entry')
-<div class="box box-warning" id='entry-permission'>
+<div id='entry-album' class="box box-warning">ыаыаыва
 </div>
 @stop
 
@@ -25,24 +25,26 @@ suka lu mutu
 @section('content')
 <table id="main-list" class="table table-striped table-bordered">
     <thead>
-        <th>{!! trans('user.permission.label.slug')!!}</th>
-        <th>{!! trans('user.permission.label.name')!!}</th>
+        <th>{!! trans('№')!!}</th>
+        <th>{!! trans('Имя')!!}</th>
+        <th>{!! trans('Привязка')!!}</th>
     </thead>
 </table>
 @stop
 @section('script')
 <script type="text/javascript">
-/*var oTable;
+var oTable;
 $(document).ready(function(){
-    $('#entry-permission').load('{{URL::to('admin/user/permission/0')}}');
+    $('#entry-album').load('{{URL::to('admin/album/album/0')}}');
     oTable = $('#main-list').dataTable( {
-        "ajax": '{{ URL::to('/admin/user/permission') }}',
+        "ajax": '{{ URL::to('/admin/album/album') }}',
         "columns": [
-            {data :'slug'},
+            {data :'id'},
             {data :'name'},
+            {data :'description'},
 
         ],
-        "permissionLength": 50
+        "albumsLength": 50
     });
 
     $('#main-list tbody').on( 'click', 'tr', function () {
@@ -50,10 +52,10 @@ $(document).ready(function(){
 
         var d = $('#main-list').DataTable().row( this ).data();
 
-        $('#entry-permission').load('{{URL::to('admin/user/permission')}}' + '/' + d.id);
+        $('#entry-album').load('{{URL::to('admin/album/album')}}' + '/' + d.id);
 
     });
-});*/
+});
 </script>
 @stop
 

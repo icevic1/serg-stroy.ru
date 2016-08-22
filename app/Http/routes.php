@@ -51,9 +51,7 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::group(['prefix' => trans_setlocale().'/admin/album', 'middleware' => ['web', 'auth.role:admin']], function () {
-
     Route::resource('album', 'AlbumAdminController');
-    //dd("route");
 });
 
 // User routes for module
@@ -61,6 +59,6 @@ Route::group(['prefix' => trans_setlocale().'/admin/album', 'middleware' => ['we
     Route::resource('page', 'PageUserController');
 });*/
 
-Route::get('/test', function () {
+/*Route::get('/test', function () {
     return  \Menu::menu('admin', 'menu.admin');
-});
+});*/

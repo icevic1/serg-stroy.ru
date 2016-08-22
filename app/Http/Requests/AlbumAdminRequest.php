@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-use Gate;
+use User;
 
 class AlbumAdminRequest extends Request
 {
@@ -14,29 +14,23 @@ class AlbumAdminRequest extends Request
      */
     public function authorize(\Illuminate\Http\Request $request)
     {
-        $page = $this->route('album');
-        // Determine if the user is authorized to access page module,
-        if (is_null($page)) {
-            return $request->user()->canDo('page.page.view');
-        }
-
         // Determine if the user is authorized to create an entry,
         if ($request->isMethod('POST') || $request->is('*/create')) {
-            return Gate::allows('create', $page);
+            return User::can('album.album.create');
         }
 
         // Determine if the user is authorized to update an entry,
         if ($request->isMethod('PUT') || $request->isMethod('PATCH') || $request->is('*/edit')) {
-            return Gate::allows('update', $page);
+            return User::can('album.album.edit');
         }
 
         // Determine if the user is authorized to delete an entry,
         if ($request->isMethod('DELETE')) {
-            return Gate::allows('delete', $page);
+            return User::can('album.album.delete');
         }
 
         // Determine if the user is authorized to view the module.
-        return Gate::allows('view', $page);
+        return User::can('album.album.view');
     }
 
     /**
@@ -49,8 +43,7 @@ class AlbumAdminRequest extends Request
         // validation rule for create request.
         if ($request->isMethod('POST')) {
             return [
-                'name'    => 'required',
-                'content' => 'required',
+                'name' => 'required',
             ];
         }
 

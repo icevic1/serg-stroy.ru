@@ -9,3 +9,8 @@ composer.develop.json
 composer.develop.lock
 composer.lock
 .idea/*
+vendor/bower_components/bootstrap-sass/assets/images/
+vendor/bower_components/mjolnic-bootstrap-colorpicker/src/
+vendor/guzzlehttp/guzzle/build/
+vendor/guzzlehttp/guzzle/docs/
+vendor/guzzlehttp/guzzle/tests/

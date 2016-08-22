@@ -21,7 +21,7 @@ return [
     | user form public side, donot include admin or superuser  role in thia array.
     |
     */
-    'roles'         => ['user'],
+    /*'roles'         => ['user'],*/
 
     /*
     |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ return [
     | Deafult role for a user if it is not specifyed explicitly.
     |
     */
-    'default_roles' => ['user'],
+   /* 'default_roles' => ['user'],*/
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     | on the website.
     |
     */
-    'superuser_role' => 'superuser',
+    /*'superuser_role' => 'superuser',*/
 
     /*
     |--------------------------------------------------------------------------
@@ -52,44 +52,45 @@ return [
     | Size of image which can be used in this package.
     |
     */
-    'image'         => [
+    /*'image'         => [
                         'xs'        => ['width' => '60',     'height' => '45'],
                         'sm'        => ['width' => '100',    'height' => '75'],
                         'md'        => ['width' => '460',    'height' => '345'],
                         'lg'        => ['width' => '800',    'height' => '600'],
                         'xl'        => ['width' => '1000',   'height' => '750'],
-    ],
+    ],*/
 
     /*
     |--------------------------------------------------------------------------
-    | User module
+    | Album module
     |--------------------------------------------------------------------------
     |
     | Configuration for the user module.
     |
     */
-    'album'      => [
-                        'model'         => 'App\Models\AlbumModel',
-                        'table'         => 'albums',
-                        'primaryKey'    => 'id',
+    'album' => [
+        'name'              => 'Album',
+        'table'         => 'albums',
+        'model'         => 'App\Models\Album',
+        'primaryKey'    => 'id',
+       /* 'visible'       => [],
+        'guarded'       => ['*'],
+        'slugs'         => [],
+        'dates'         => ['deleted_at'],
+        'appends'       => [''],*/
+        'fillable'      => ['name','user_id','description','views'],
+        'listfields'    => ['id', 'name','user_id','description','views'],
+        'perPage'       => '20',
+        'uploadfolder'  => '/uploads/users',
+        'uploadable'    => [
+                                'single'   => ['photo'],
+                                'multiple' => [],
+                            ],
+        /*'casts'         => [
+                            'albums'   => 'array',
+                           ],*/
 
-                        'visible'       => [],
-                        'guarded'       => ['*'],
-                        'slugs'         => [],
-                        'dates'         => ['deleted_at'],
-                        'appends'       => ['eid'],
-                        'fillable'      => ['name','user_id','descriptin','views', ],
-                        'listfields'    => ['id', 'name','user_id','descriptin','views', ],
-                        'uploadfolder'  => '/uploads/users',
-                        'uploadable'    => [
-                                                'single'   => ['photo'],
-                                                'multiple' => [],
-                                            ],
-                        'casts'         => [
-                                            'permissions'   => 'array',
-                                           ],
-                        'perPage'       => '20',
-                ],
+        ],
 
 
 ];

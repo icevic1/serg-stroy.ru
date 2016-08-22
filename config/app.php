@@ -183,6 +183,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
         App\Providers\AlbumServiceProvider::class,
 
     ],
@@ -249,6 +250,8 @@ return [
         'Task'      => Lavalite\Task\Facades\Task::class,
         'Calendar'  => Lavalite\Calendar\Facades\Calendar::class,
         'Message'   => Lavalite\Message\Facades\Message::class,
+
+        'Album'   => App\Models\Album::class,
 
     ],
 

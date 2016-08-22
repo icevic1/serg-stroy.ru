@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
+use Request;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,13 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        if (Request::is('*admin/album/album/*')) {
+            $router->bind('album', function ($id) {
+                $permission = $this->app->make('\App\Repositories\AlbumRepository');
+
+                return $permission->findOrNew($id);
+            });
+        }
 
         parent::boot($router);
     }
