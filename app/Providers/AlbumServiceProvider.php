@@ -19,12 +19,12 @@ class AlbumServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//dd('boot');
-        /*$this->loadViewsFrom(__DIR__.'/../../../../resources/views', 'album');
+//dd('boot', __DIR__.'/../../../../resources/views');
+        $this->loadViewsFrom(__DIR__.'/../../../../resources/views', 'album');
 
         $this->loadTranslationsFrom(__DIR__.'/../../../../resources/lang', 'album');
 
-        $this->publishResources();*/
+        $this->publishResources();
     }
 
     /**
@@ -42,9 +42,9 @@ class AlbumServiceProvider extends ServiceProvider
             \App\Repositories\AlbumRepository::class
         );
 //        dd('provider register');
-        /*$this->app->register(\Lavalite\Page\Providers\AuthServiceProvider::class);
-        $this->app->register(\Lavalite\Page\Providers\EventServiceProvider::class);
-        $this->app->register(\Lavalite\Page\Providers\RouteServiceProvider::class);*/
+        $this->app->register(\App\Providers\Album\AuthServiceProvider::class);
+        $this->app->register(\App\Providers\Album\EventServiceProvider::class);
+        $this->app->register(\App\Providers\Album\RouteServiceProvider::class);
     }
 
     /**
@@ -52,20 +52,25 @@ class AlbumServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    /*public function provides()
+    public function provides()
     {
         return ['album'];
-    }*/
+    }
 
     /**
      * Publish configuration file.
      */
     private function publishResources()
     {
-        /*// Publish configuration file
-        $this->publishes([__DIR__.'/../../../../config/config.php' => config_path('package/page.php')], 'config');
 
-        // Publish public view
+//        $myfile = fopen(__DIR__.'/../../../../config/config.php', "r") or die("Unable to open file!");
+//        echo fread($myfile, filesize(__DIR__.'/../../../../config/config.php'));
+//        fclose($myfile);
+//        dd(file_exists(config_path('album.php')), config_path('package/page.php'));
+       // Publish configuration file
+        $this->publishes([__DIR__.'/../../../../config/config.php' => config_path('album.php')], 'config');
+
+         /*// Publish public view
         $this->publishes([__DIR__.'/../../../../resources/views/public' => base_path('resources/views/vendor/page/public')], 'view-public');
 
         // Publish admin view

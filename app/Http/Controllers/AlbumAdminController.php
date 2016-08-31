@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\AdminController as AdminController;
+use App\Http\Controllers\AdminController;
 use Form;
 use App\Http\Requests\AlbumAdminRequest;
 use App\Interfaces\AlbumRepositoryInterface;
 use App\Models\Album;
+use Illuminate\Routing\Route;
 //use Lavalite\Page\Interfaces\PageRepositoryInterface;
 
 /**
@@ -39,16 +40,29 @@ class AlbumAdminController extends AdminController
      */
     public function index(AlbumAdminRequest $request)
     {
-//        dd('index');
+//        echo Route::getCurrentRoute()->getActionName();
+//        $gg = app('config')->get("album", null);
+        $config = config("album.album");
+dd($config, $this->model);
+        $res = $this->model->create([
+//            'id' => null,
+            'name' => 'album_xxs',
+            'user_id' => 1,
+            'description' => 'desc',
+            'views' => 3
+        ]);
+        dd('index', $res);
 
 //        $pages  = $this->model->setPresenter('\\Lavalite\\Page\\Repositories\\Presenter\\PageListPresenter')->paginate(NULL, ['*']);
+
+        $albums = $this->model->setPresenter('\\App\\Repositories\\Presenter\\AlbumListPresenter')->paginate(null, ['*']);
         $this->theme->prependTitle('Фото Галерея :: ');
         $view   = $this->theme->of('admin::album.index')->render();
 
         $this->responseCode = 200;
         $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Page']);
-//        $this->responseData = $pages['data'];
-//        $this->responseMeta = $pages['meta'];
+        $this->responseData = $albums['data'];
+        $this->responseMeta = $albums['meta'];
         $this->responseView = $view;
         $this->responseRedirect = '';
         return $this->respond($request);
@@ -66,16 +80,16 @@ class AlbumAdminController extends AdminController
     {
         if (!$album->exists) {
             $this->responseCode = 404;
-            $this->responseMessage = trans('messages.success.notfound', ['Module' => 'Album']);
+            $this->responseMessage = trans('messages.success.notfound', ['Module' => 'Permission']);
             $this->responseView = view('admin::album.new');//Album::album.new
-
+//            dd($album);
             return $this->respond($request);
         }
-
+//        dd($album);
         Form::populate($album);
         $this->responseCode = 200;
-        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Album']);
-        $this->responseView = view('album::album.show', compact('album'));
+        $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Page']);
+        $this->responseView = view('admin::album.show', compact('album'));
 
         return $this->respond($request);
     }

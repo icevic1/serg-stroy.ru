@@ -123,7 +123,9 @@ class Model extends Eloquent
      */
     public function initialize()
     {
+        print $this->config.", ";
         $config = config($this->config);
+//        if ($this->config == 'album' || $this->config == 'user.permission')dd("config:",$this->config, $config);
         foreach ($config as $key => $val) {
             if (property_exists(get_called_class(), $key)) {
                 $this->$key = $val;

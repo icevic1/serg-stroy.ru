@@ -84,6 +84,7 @@ return [
                         'perPage'       => '20',
 
                     ],
+
     /*
     |--------------------------------------------------------------------------
     | Role module
@@ -170,4 +171,28 @@ return [
                         'translate'     => [],
                         'perPage'       => '20',
                 ],
+
+    'album' => [
+        'name'              => 'Album',
+        'table'         => 'albums',
+        'model'         => 'App\Models\Album',
+        'primaryKey'    => 'id',
+        /* 'visible'       => [],
+         'guarded'       => ['*'],
+         'slugs'         => [],
+         'dates'         => ['deleted_at'],
+         'appends'       => [''],*/
+        'fillable'      => ['name', 'user_id', 'description', 'views'],
+        'listfields'    => ['name', 'user_id', 'description', 'views'],
+        'perPage'       => '20',
+        'uploadfolder'  => '/uploads/users',
+        'uploadable'    => [
+            'single'   => ['photo'],
+            'multiple' => [],
+        ],
+        'casts'         => [
+            'albums'   => 'array',
+        ],
+
+    ],
 ];

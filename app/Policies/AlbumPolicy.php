@@ -14,7 +14,7 @@ class AlbumPolicy
      * Determine if the given user can view the permission.
      *
      * @param User       $user
-     * @param Permission $permission
+     * @param Album $album
      *
      * @return bool
      */
@@ -27,11 +27,11 @@ class AlbumPolicy
      * Determine if the given user can create a permission.
      *
      * @param User       $user
-     * @param Permission $permission
+     * @param Album $album
      *
      * @return bool
      */
-    public function create(User $user)
+    public function create(User $user, Album $album)
     {
         return false;
     }

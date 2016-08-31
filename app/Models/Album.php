@@ -20,6 +20,15 @@ class Album extends Model
      */
     protected $config = 'album.album';
 
+//    protected $table = 'albums';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+//    protected $fillable = [ /*'id',*/  'name', 'user_id', 'description', 'views' ];
+
     /**
      * Many-to-many permission-role relationship.
      *

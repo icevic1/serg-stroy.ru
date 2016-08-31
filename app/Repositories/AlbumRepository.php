@@ -28,9 +28,9 @@ class AlbumRepository extends BaseRepository implements AlbumRepositoryInterface
      *
      * @return mixed
      */
-    public function groupedPermissions($grouped = false)
+    public function groupedAlbums($grouped = false)
     {
-        $result = $this->model->orderBy('name')->lists('name', 'slug')->toArray();
+        $result = $this->model->orderBy('name')->lists('name')->toArray();
 
         $array = [];
 
@@ -52,18 +52,19 @@ class AlbumRepository extends BaseRepository implements AlbumRepositoryInterface
      *
      * @return Permission
      */
-    public function createPermission($name, $slug = null)
+    public function createAlbum($name, $slug = null)
     {
+        dd("createAlbum");
         if (!is_null($this->findByName($name))) {
-            throw new PermissionExistsException('The permission '.$name.' already exists'); // TODO: add translation support
+            throw new AlbumExistsException('The album '.$name.' already exists'); // TODO: add translation support
         }
 
         // Do we have a display_name set?
         $slug = is_null($slug) ? $name : $slug;
 
-        return $permission = $this->model->create([
+        return $album = $this->model->create([
             'name'      => $name,
-            'slug'      => $slug,
+//            'slug'      => $slug,
         ]);
     }
 
@@ -72,19 +73,19 @@ class AlbumRepository extends BaseRepository implements AlbumRepositoryInterface
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getByRoles(array $rolesIds)
+    /*public function getByRoles(array $rolesIds)
     {
         return $this->model->whereHas('roles', function ($query) use ($rolesIds) {
             $query->whereIn('id', $rolesIds);
         })->get();
-    }
+    }*/
 
     /**
      * @param $user
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getActivesByUser($user)
+    /*public function getActivesByUser($user)
     {
         $table = $user->permissions()->getTable();
 
@@ -95,5 +96,5 @@ class AlbumRepository extends BaseRepository implements AlbumRepositoryInterface
                 $q->orWhereNull($table.'.expires');
             })
             ->get();
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 @extends('admin::curd.index')
 @section('heading')
-<i class="fa fa-file-text-o"></i> {!! trans('Фото Галерея') !!} <small> {!! trans('Альбомы') !!}</small>
+<i class="fa fa-file-text-o"></i> {!! trans('Фото-галерея') !!} <small> {!! trans('Альбомы') !!}</small>
 @stop
 
 @section('title')
@@ -15,7 +15,7 @@
 @stop
 
 @section('entry')
-<div id='entry-album' class="box box-warning">ыаыаыва
+<div id='entry-album' class="box box-warning">
 </div>
 @stop
 
@@ -25,11 +25,15 @@
 @section('content')
 <table id="main-list" class="table table-striped table-bordered">
     <thead>
-        <th>{!! trans('№')!!}</th>
+        <th>{!! trans('ID')!!}</th>
         <th>{!! trans('Имя')!!}</th>
-        <th>{!! trans('Привязка')!!}</th>
+        <th>{!! trans('Привязон за')!!}</th>
+        <th>{!! trans('Описание')!!}</th>
+        <th>{!! trans('Дата Добавления')!!}</th>
+        {{--<th>{!! trans('Количество')!!}</th>--}}
     </thead>
 </table>
+
 @stop
 @section('script')
 <script type="text/javascript">
@@ -41,10 +45,11 @@ $(document).ready(function(){
         "columns": [
             {data :'id'},
             {data :'name'},
+            {data :'user_name'},
             {data :'description'},
-
-        ],
-        "albumsLength": 50
+            {data :'created_at'},
+        ]/*,
+        "albumsLength": 50*/
     });
 
     $('#main-list tbody').on( 'click', 'tr', function () {

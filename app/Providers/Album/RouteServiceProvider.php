@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Album;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 use Request;
+use App\Models\Album;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -20,21 +21,18 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param \Illuminate\Routing\Router $router
-     *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
     public function boot(Router $router)
     {
-        if (Request::is('*admin/album/album/*')) {
+        parent::boot($router);
+        if (Request::is('*admin/album/*')) {
             $router->bind('album', function ($id) {
-                $album = $this->app->make('\App\Repositories\AlbumRepository');
-
-                return $album->findOrNew($id);
+                $album = $this->app->make('\App\Interfaces\AlbumRepositoryInterface');
+                return $album->find($id);
             });
         }
-
-        parent::boot($router);
     }
 
     /**
@@ -47,7 +45,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace], function ($router) {
-            require app_path('Http/routes.php');
+            require __DIR__.'/../../Http/routes.php';
         });
     }
 }

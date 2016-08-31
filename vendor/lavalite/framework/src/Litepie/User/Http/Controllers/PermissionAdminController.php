@@ -32,10 +32,16 @@ class PermissionAdminController extends AdminController
      */
     public function index(PermissionAdminRequest $request)
     {
+        dd('index permision',  $this->model);
+        $res = $this->model->create([
+            'name' => 'permision_xxs',
+            'slug' => 'test_slug',
+        ]);
+
         $permissions = $this->model->setPresenter('\\Litepie\\User\\Repositories\\Presenter\\PermissionListPresenter')->paginate(null, ['*']);
         $this->theme->prependTitle(trans('user.permission.names').' :: ');
         $view = $this->theme->of('User::permission.index')->render();
-
+//dd($request);
         $this->responseCode = 200;
         $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Permission']);
         $this->responseData = $permissions['data'];
@@ -64,6 +70,8 @@ class PermissionAdminController extends AdminController
 
             return $this->respond($request);
         }
+
+        dd($permission);
         Form::populate($permission);
         $this->responseCode = 200;
         $this->responseMessage = trans('messages.success.loaded', ['Module' => 'Permission']);

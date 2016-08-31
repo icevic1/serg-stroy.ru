@@ -10,7 +10,7 @@ return [
     | Here is the modules included in this package which can be used in this package.
     |
     */
-    'modules'       => ['album'],
+//    'modules'       => ['album'],
 
     /*
     |--------------------------------------------------------------------------
@@ -78,17 +78,17 @@ return [
         'slugs'         => [],
         'dates'         => ['deleted_at'],
         'appends'       => [''],*/
-        'fillable'      => ['name','user_id','description','views'],
-        'listfields'    => ['id', 'name','user_id','description','views'],
+        'fillable'      => ['name', 'user_id', 'description', 'views'],
+        'listfields'    => ['name', 'user_id', 'description', 'views'],
         'perPage'       => '20',
         'uploadfolder'  => '/uploads/users',
         'uploadable'    => [
                                 'single'   => ['photo'],
                                 'multiple' => [],
                             ],
-        /*'casts'         => [
+        'casts'         => [
                             'albums'   => 'array',
-                           ],*/
+                           ],
 
         ],
 
